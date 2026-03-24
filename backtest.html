@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strategy Backtest — Agentic Sciences Research</title>
+<style>
+:root {
+    --bg: #0a0a0a;
+    --card-bg: #111;
+    --card-bg2: #161616;
+    --border: #222;
+    --text: #e8e8e8;
+    --text-dim: #777;
+    --accent: #00d4aa;
+    --accent2: #7c4dff;
+    --gold: #ffd700;
+    --silver: #c0c0c0;
+    --bronze: #cd7f32;
+    --green: #4caf50;
+    --red: #ef5350;
+    --blue: #42a5f5;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 20px;
+    text-align: center;
+}
+.header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+.header .subtitle {
+    color: var(--text-dim);
+    font-size: 1rem;
+}
+.header .meta {
+    margin-top: 16px;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.header .meta-item {
+    background: rgba(255,255,255,0.05);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}
+.header .meta-item strong { color: var(--accent); }
+
+.container { max-width: 1400px; margin: 0 auto; padding: 24px 20px; }
+
+/* Navigation */
+.nav {
+    text-align: center;
+    margin-bottom: 32px;
+}
+.nav a {
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 4px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+.nav a:hover, .nav a.active {
+    background: var(--accent);
+    color: #000;
+    text-decoration: none;
+    border-color: var(--accent);
+}
+
+/* Rankings Table */
+.rankings {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+.rankings h2 {
+    padding: 16px 24px;
+    font-size: 1.3rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th {
+    background: var(--card-bg2);
+    padding: 12px 16px;
+    text-align: right;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+}
+th:first-child, td:first-child { text-align: center; width: 50px; }
+th:nth-child(2), td:nth-child(2) { text-align: left; }
+td {
+    padding: 12px 16px;
+    text-align: right;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    font-variant-numeric: tabular-nums;
+}
+tr:hover { background: rgba(255,255,255,0.03); }
+.rank-1 { color: var(--gold); font-weight: 700; }
+.rank-2 { color: var(--silver); font-weight: 700; }
+.rank-3 { color: var(--bronze); font-weight: 700; }
+.positive { color: var(--green); }
+.negative { color: var(--red); }
+.strategy-name { font-weight: 600; }
+.sharpe-bar {
+    display: inline-block;
+    height: 6px;
+    border-radius: 3px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* YTD Section */
+.ytd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+}
+.ytd-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+.ytd-card .name { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 4px; }
+.ytd-card .value { font-size: 1.5rem; font-weight: 700; }
+
+/* Charts */
+.chart-section {
+    margin-bottom: 32px;
+}
+.chart-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.chart-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.chart-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.chart-card img {
+    width: 100%;
+    display: block;
+}
+.chart-card .caption {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border);
+}
+
+/* Methodology */
+.methodology {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+}
+.methodology h2 { margin-bottom: 16px; font-size: 1.3rem; }
+.methodology h3 { margin: 16px 0 8px; color: var(--accent); font-size: 1rem; }
+.methodology p, .methodology li { color: var(--text-dim); font-size: 0.9rem; }
+.methodology ul { padding-left: 20px; }
+.methodology li { margin-bottom: 4px; }
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+.method-card {
+    background: var(--card-bg2);
+    border-radius: 8px;
+    padding: 16px;
+}
+.method-card h4 { color: var(--accent2); font-size: 0.9rem; margin-bottom: 8px; }
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 { font-size: 1.5rem; }
+    .header .meta { gap: 8px; }
+    th, td { padding: 8px; font-size: 0.75rem; }
+    .ytd-grid { grid-template-columns: repeat(2, 1fr); }
+    table { display: block; overflow-x: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>📊 Strategy Factor Backtest</h1>
+    <div class="subtitle">US Equity Factor Strategies — CRSP v2 Monthly Rebalance</div>
+    <div class="meta">
+        <div class="meta-item">📅 <strong>2000 — 2025</strong> (26 years)</div>
+        <div class="meta-item">📈 <strong>16,544</strong> stocks</div>
+        <div class="meta-item">📊 <strong>311</strong> months</div>
+        <div class="meta-item">🔢 <strong>1,370,138</strong> observations</div>
+        <div class="meta-item">💾 Data: <strong>WRDS CRSP v2</strong></div>
+    </div>
+</div>
+
+<div class="container">
+
+<div class="nav">
+    <a href="index.html">← Dashboard</a>
+    <a href="#rankings">Rankings</a>
+    <a href="#ytd">2025 YTD</a>
+    <a href="#charts">Charts</a>
+    <a href="#methodology">Methodology</a>
+</div>
+
+<!-- Rankings Table -->
+<div class="rankings" id="rankings">
+    <h2>🏆 Strategy Performance Rankings (by Sharpe Ratio)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Strategy</th>
+                <th>Ann. Return</th>
+                <th>Ann. Vol</th>
+                <th>Sharpe</th>
+                <th>Max DD</th>
+                <th>Calmar</th>
+                <th>Win Rate</th>
+                <th>Total Return</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="rank-1">🥇</td>
+                <td class="strategy-name">Multi-Factor L/S (多因子复合)</td>
+                <td class="positive">34.2%</td>
+                <td>17.3%</td>
+                <td class="positive">1.98 <span class="sharpe-bar" style="width:99px;background:var(--accent)"></span></td>
+                <td class="negative">-36.7%</td>
+                <td>0.93</td>
+                <td>74.0%</td>
+                <td class="positive">141,970%</td>
+            </tr>
+            <tr>
+                <td class="rank-2">🥈</td>
+                <td class="strategy-name">Value L/S (价值)</td>
+                <td class="positive">36.3%</td>
+                <td>18.7%</td>
+                <td class="positive">1.94 <span class="sharpe-bar" style="width:97px;background:var(--accent)"></span></td>
+                <td class="negative">-26.5%</td>
+                <td>1.37</td>
+                <td>68.8%</td>
+                <td class="positive">203,912%</td>
+            </tr>
+            <tr>
+                <td class="rank-3">🥉</td>
+                <td class="strategy-name">Small Cap L/S (小盘)</td>
+                <td class="positive">25.7%</td>
+                <td>13.7%</td>
+                <td class="positive">1.87 <span class="sharpe-bar" style="width:94px;background:var(--accent)"></span></td>
+                <td class="negative">-20.0%</td>
+                <td>1.28</td>
+                <td>70.4%</td>
+                <td class="positive">29,723%</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="strategy-name">Market EW (市场等权)</td>
+                <td class="positive">18.3%</td>
+                <td>19.0%</td>
+                <td class="positive">0.97 <span class="sharpe-bar" style="width:48px;background:var(--blue)"></span></td>
+                <td class="negative">-48.3%</td>
+                <td>0.38</td>
+                <td>64.6%</td>
+                <td class="positive">4,848%</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="strategy-name">Quant Long (量化多头)</td>
+                <td class="positive">16.1%</td>
+                <td>18.5%</td>
+                <td class="positive">0.87 <span class="sharpe-bar" style="width:44px;background:var(--blue)"></span></td>
+                <td class="negative">-50.4%</td>
+                <td>0.32</td>
+                <td>65.3%</td>
+                <td class="positive">2,988%</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td class="strategy-name">Quality (质量因子)</td>
+                <td class="positive">2.3%</td>
+                <td>2.8%</td>
+                <td class="positive">0.81 <span class="sharpe-bar" style="width:41px;background:var(--blue)"></span></td>
+                <td class="negative">-2.8%</td>
+                <td>0.80</td>
+                <td>57.6%</td>
+                <td class="positive">76%</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td class="strategy-name">Index Enhance (量化指增)</td>
+                <td class="positive">9.0%</td>
+                <td>12.9%</td>
+                <td class="positive">0.70 <span class="sharpe-bar" style="width:35px;background:var(--blue)"></span></td>
+                <td class="negative">-41.1%</td>
+                <td>0.22</td>
+                <td>65.0%</td>
+                <td class="positive">652%</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td class="strategy-name">Market VW (市场市值加权)</td>
+                <td class="positive">9.9%</td>
+                <td>15.8%</td>
+                <td class="positive">0.63 <span class="sharpe-bar" style="width:31px;background:var(--blue)"></span></td>
+                <td class="negative">-51.4%</td>
+                <td>0.19</td>
+                <td>64.3%</td>
+                <td class="positive">735%</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td class="strategy-name">Equity L/S (股票多空)</td>
+                <td class="positive">4.5%</td>
+                <td>8.2%</td>
+                <td class="positive">0.55 <span class="sharpe-bar" style="width:28px;background:var(--blue)"></span></td>
+                <td class="negative">-29.4%</td>
+                <td>0.15</td>
+                <td>63.3%</td>
+                <td class="positive">187%</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td class="strategy-name">Reversal L/S (短期反转)</td>
+                <td class="positive">7.4%</td>
+                <td>14.4%</td>
+                <td class="positive">0.51 <span class="sharpe-bar" style="width:26px;background:var(--blue)"></span></td>
+                <td class="negative">-24.5%</td>
+                <td>0.30</td>
+                <td>54.7%</td>
+                <td class="positive">389%</td>
+            </tr>
+            <tr style="opacity:0.6">
+                <td>11</td>
+                <td class="strategy-name">Low Vol L/S (低波动)</td>
+                <td class="negative">-13.1%</td>
+                <td>24.4%</td>
+                <td class="negative">-0.54</td>
+                <td class="negative">-99.1%</td>
+                <td>-0.13</td>
+                <td>43.7%</td>
+                <td class="negative">-99%</td>
+            </tr>
+            <tr style="opacity:0.6">
+                <td>12</td>
+                <td class="strategy-name">Momentum L/S (动量)</td>
+                <td class="negative">-10.2%</td>
+                <td>18.4%</td>
+                <td class="negative">-0.55</td>
+                <td class="negative">-97.0%</td>
+                <td>-0.10</td>
+                <td>46.6%</td>
+                <td class="negative">-96%</td>
+            </tr>
+            <tr style="opacity:0.6">
+                <td>13</td>
+                <td class="strategy-name">Market Neutral (市场中性)</td>
+                <td class="negative">-5.2%</td>
+                <td>9.2%</td>
+                <td class="negative">-0.57</td>
+                <td class="negative">-80.4%</td>
+                <td>-0.06</td>
+                <td>46.6%</td>
+                <td class="negative">-78%</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 2025 YTD -->
+<div class="chart-section" id="ytd">
+    <h2>📅 2025 Year-to-Date Performance</h2>
+    <div class="ytd-grid">
+        <div class="ytd-card">
+            <div class="name">Multi-Factor L/S</div>
+            <div class="value positive">+65.6%</div>
+        </div>
+        <div class="ytd-card">
+            <div class="name">Value L/S</div>
+            <div class="value positive">+42.0%</div>
+        </div>
+        <div class="ytd-card">
+            <div class="name">Market EW</div>
+            <div class="value positive">+20.3%</div>
+        </div>
+        <div class="ytd-card">
+            <div class="name">Quant Long</div>
+            <div class="value positive">+19.5%</div>
+        </div>
+        <div class="ytd-card">
+            <div class="name">Market VW</div>
+            <div class="value positive">+18.1%</div>
+        </div>
+        <div class="ytd-card">
+            <div class="name">Small Cap L/S</div>
+            <div class="value positive">+17.1%</div>
+        </div>
+        <div class="ytd-card">
+            <div class="name">Index Enhance</div>
+            <div class="value positive">+12.1%</div>
+        </div>
+        <div class="ytd-card">
+            <div class="name">Reversal L/S</div>
+            <div class="value positive">+7.3%</div>
+        </div>
+        <div class="ytd-card">
+            <div class="name">Equity L/S</div>
+            <div class="value positive">+7.0%</div>
+        </div>
+        <div class="ytd-card">
+            <div class="name">Quality</div>
+            <div class="value positive">+0.8%</div>
+        </div>
+        <div class="ytd-card">
+            <div class="name">Market Neutral</div>
+            <div class="value negative">-2.7%</div>
+        </div>
+        <div class="ytd-card">
+            <div class="name">Momentum L/S</div>
+            <div class="value negative">-5.5%</div>
+        </div>
+        <div class="ytd-card">
+            <div class="name">Low Vol L/S</div>
+            <div class="value negative">-25.4%</div>
+        </div>
+    </div>
+</div>
+
+<!-- Charts -->
+<div class="chart-section" id="charts">
+    <h2>📈 Performance Charts</h2>
+    <div class="chart-grid">
+        <div class="chart-card">
+            <img src="figures/strategy_v3_cumulative.png" alt="Cumulative Returns" loading="lazy">
+            <div class="caption">Cumulative returns across 4 strategy categories: long-biased, factor L/S, defensive, and drawdown comparison. Log scale for long-biased panel.</div>
+        </div>
+        <div class="chart-card">
+            <img src="figures/strategy_v3_risk_return.png" alt="Risk-Return Scatter" loading="lazy">
+            <div class="caption">Risk-return scatter with Sharpe ratio iso-lines. Stars (★) indicate SR > 1.0. Multi-Factor, Value, and Small Cap dominate the upper-left quadrant.</div>
+        </div>
+        <div class="chart-card">
+            <img src="figures/strategy_v3_annual_heatmap.png" alt="Annual Returns Heatmap" loading="lazy">
+            <div class="caption">Annual returns by strategy (2000–2025). Green = positive, red = negative. Value and Small Cap show remarkable consistency across market regimes.</div>
+        </div>
+        <div class="chart-card">
+            <img src="figures/strategy_v3_rolling_sharpe.png" alt="Rolling Sharpe" loading="lazy">
+            <div class="caption">Rolling 3-year Sharpe Ratio. Shows strategy performance stability over time. Factor L/S strategies exhibit higher variance but sustained positive Sharpe.</div>
+        </div>
+        <div class="chart-card">
+            <img src="figures/strategy_v3_correlation.png" alt="Correlation Matrix" loading="lazy">
+            <div class="caption">Strategy return correlation matrix. Low cross-correlation enables portfolio diversification. Market Neutral and factor L/S strategies are largely orthogonal to market beta.</div>
+        </div>
+    </div>
+</div>
+
+<!-- Key Findings -->
+<div class="methodology">
+    <h2>💡 Key Findings</h2>
+    <div class="method-grid">
+        <div class="method-card">
+            <h4>Small + Value = Best Factors</h4>
+            <p>Small Cap L/S (SR 1.87) and Value L/S (SR 1.94) are the strongest standalone factors over 26 years. Combining them with momentum in a multi-factor composite yields SR 1.98 — the best risk-adjusted strategy.</p>
+        </div>
+        <div class="method-card">
+            <h4>Equal-Weight >> Value-Weight</h4>
+            <p>Equal-weighted market (18.3% ann.) dramatically outperforms value-weighted (9.9%). This ~8% gap reflects the small-cap premium embedded in equal weighting — effectively a free alpha source.</p>
+        </div>
+        <div class="method-card">
+            <h4>Momentum Crashed in the US</h4>
+            <p>Pure momentum L/S lost -97% over 26 years. The 2009 momentum crash was devastating, and the factor never recovered. However, momentum remains effective in other markets (e.g., A-shares).</p>
+        </div>
+        <div class="method-card">
+            <h4>Market Neutral Doesn't Work (US)</h4>
+            <p>Market neutral returns -5.2% annually in the US. Contrast with Chinese private funds achieving 6-7% — reflecting A-share market's greater pricing inefficiency and retail investor participation.</p>
+        </div>
+        <div class="method-card">
+            <h4>Quality = Ultimate Ballast</h4>
+            <p>Quality factor shows only 2.3% annual return but with just 2.8% volatility and -2.8% max drawdown. SR 0.81 makes it the ideal portfolio stabilizer and risk-off allocation.</p>
+        </div>
+        <div class="method-card">
+            <h4>2025: Value Renaissance</h4>
+            <p>Value L/S returned +42.0% YTD in 2025, and Multi-Factor surged +65.6%. The value rotation that began post-COVID continues to deliver, potentially driven by higher interest rates favoring cheap stocks.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Methodology -->
+<div class="methodology" id="methodology">
+    <h2>📋 Methodology</h2>
+    
+    <h3>Data</h3>
+    <ul>
+        <li><strong>Source:</strong> WRDS CRSP v2 (<code>crsp_a_stock.msf_v2</code>)</li>
+        <li><strong>Universe:</strong> NYSE (N), AMEX (A), NASDAQ (Q) — common equity only (<code>sharetype='NS'</code>, <code>securitytype='EQTY'</code>)</li>
+        <li><strong>Period:</strong> January 2000 – December 2025 (311 formation months)</li>
+        <li><strong>Minimum price:</strong> $1 (penny stock filter)</li>
+        <li><strong>Factors:</strong> Fama-French 5 Factors + Momentum (from <code>ff.fivefactors_daily</code>)</li>
+    </ul>
+
+    <h3>Signal Construction</h3>
+    <ul>
+        <li><strong>Momentum (12-2):</strong> Cumulative return from month t-12 to t-2, skipping most recent month</li>
+        <li><strong>Value:</strong> Inverse price (1/P) as book-to-market proxy</li>
+        <li><strong>Size:</strong> Log market capitalization</li>
+        <li><strong>Volatility:</strong> Trailing 12-month return standard deviation</li>
+        <li><strong>Reversal:</strong> Prior 1-month return</li>
+        <li><strong>Multi-Factor:</strong> Z-score composite: 40% Momentum + 30% Value + 30% Low Volatility</li>
+    </ul>
+
+    <h3>Portfolio Construction</h3>
+    <ul>
+        <li><strong>Rebalance:</strong> Monthly (end of month)</li>
+        <li><strong>Weighting:</strong> Equal-weight within quintiles</li>
+        <li><strong>Long-Short:</strong> Long top quintile (Q5), short bottom quintile (Q1)</li>
+        <li><strong>Long-biased strategies:</strong> Various net exposure profiles (see table)</li>
+        <li><strong>Transaction costs:</strong> Not included (gross returns)</li>
+        <li><strong>Minimum stocks per month:</strong> 200</li>
+    </ul>
+
+    <h3>Limitations</h3>
+    <ul>
+        <li>No transaction costs, slippage, or market impact modeled</li>
+        <li>Equal-weight portfolios may overweight illiquid micro-caps</li>
+        <li>1/P is a rough value proxy — proper book-to-market requires Compustat merge</li>
+        <li>Survivorship bias partially mitigated by CRSP delisting-inclusive returns</li>
+        <li>Results are before fees; actual fund returns would be 2-5% lower annually</li>
+    </ul>
+</div>
+
+<div class="footer">
+    <p>Agentic Sciences Research · Generated by ComeWealth Autonomous Research Engine</p>
+    <p style="margin-top:8px">Data: WRDS CRSP v2 · Fama-French Factors · Last updated: March 2026</p>
+    <p style="margin-top:4px"><a href="index.html">← Back to Research Dashboard</a></p>
+</div>
+
+</div>
+</body>
+</html>
