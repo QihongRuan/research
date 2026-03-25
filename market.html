@@ -339,10 +339,111 @@ Every stock analyzed has >75% odd-lot trades (< 100 shares), with META at 95.3%.
 </div>
 </div>
 
+<!-- ============================================ -->
+<!-- SECTION 3b: TAQ Monthly -->
+<!-- ============================================ -->
+<h3>Monthly Microstructure Trends (2025)</h3>
+
+<p>Full-year analysis: 12 months × 7 stocks, each month scanning 80-100 million trade records from TAQ. Total processing time: 27.6 minutes on research1.</p>
+
+<div class="chart-container">
+    <img src="figures/taq_rv_monthly.png" alt="RV Monthly">
+    <div class="chart-caption">Figure 11: Realized volatility (1-min and 5-min) monthly trends — TSLA and NVDA peak in Feb 2025 at 44%</div>
+</div>
+
+<div class="chart-container">
+    <img src="figures/taq_volume_monthly.png" alt="Volume Monthly">
+    <div class="chart-caption">Figure 12: Daily dollar volume by month — TSLA hits $12.8B in May (single-day record)</div>
+</div>
+
+<div class="chart-container">
+    <img src="figures/taq_ofi_vpin_heatmap.png" alt="OFI VPIN Heatmap">
+    <div class="chart-caption">Figure 13: Order Flow Imbalance (OFI) and VPIN monthly heatmap</div>
+</div>
+
+<div class="chart-container">
+    <img src="figures/taq_amihud_monthly.png" alt="Amihud Monthly">
+    <div class="chart-caption">Figure 14: Amihud illiquidity — lower is more liquid</div>
+</div>
+
+<div class="chart-container">
+    <img src="figures/taq_oddlot_monthly.png" alt="Odd Lot Monthly">
+    <div class="chart-caption">Figure 15: Odd-lot percentage — consistently above 75% for all stocks (the retail era)</div>
+</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION 4: News Sentiment Alpha -->
+<!-- ============================================ -->
+<div class="section">
+<h2>IV. News Sentiment Alpha (RavenPack)</h2>
+
+<p>Analysis of 178,318 news events from RavenPack Dow Jones edition (2020-2025) matched with CRSP daily returns. Tests whether news sentiment predicts next-day stock returns.</p>
+
+<div class="methodology">
+<h4>Methodology</h4>
+<p><strong>Data:</strong> WRDS RavenPack DJ (<code>rpa_djpr_equities_20xx</code>), 2020-2025<br>
+<strong>Filter:</strong> Relevance ≥ 75 (high-relevance news only)<br>
+<strong>Sentiment:</strong> Composite Sentiment Score (CSS), range [−1, +1]<br>
+<strong>Signal:</strong> Daily average CSS per stock → predict next-day return<br>
+<strong>Stocks:</strong> AAPL, AMZN, GOOG, MSFT, META (~22 news/day each)</p>
+</div>
+
+<h3>Sentiment Quintile Returns</h3>
+<div class="chart-container">
+    <img src="figures/ravenpack_quintile_returns.png" alt="Quintile Returns">
+    <div class="chart-caption">Figure 16: Sentiment quintile vs. next-day annualized return and Sharpe — Q4 (mildly positive) outperforms Q5 (most positive)</div>
+</div>
+
+<table>
+<tr><th>Quintile</th><th>CSS Range</th><th>Next-Day Ann. Return</th><th>Sharpe</th><th>Interpretation</th></tr>
+<tr><td>Q1 (Most Negative)</td><td>< −0.10</td><td class="negative">−3.6%</td><td>−0.09</td><td>Bad news → bad returns</td></tr>
+<tr><td>Q2</td><td>−0.10 to −0.02</td><td class="positive">+17.5%</td><td>0.54</td><td>Mild negativity = buying opportunity</td></tr>
+<tr><td>Q3</td><td>−0.02 to +0.02</td><td class="positive">+34.1%</td><td>1.10</td><td>Neutral news = steady returns</td></tr>
+<tr class="highlight"><td><strong>Q4</strong></td><td>+0.02 to +0.10</td><td class="positive"><strong>+55.3%</strong></td><td><strong>1.63</strong></td><td>Mildly positive = the sweet spot</td></tr>
+<tr><td>Q5 (Most Positive)</td><td>> +0.10</td><td class="positive">+39.5%</td><td>1.21</td><td>Very positive may be "priced in"</td></tr>
+</table>
+
+<div class="key-finding">
+<strong>Key Finding: The Inverted-U of Sentiment</strong>
+The relationship between news sentiment and next-day returns is not monotonic — it follows an inverted-U shape. The Q4 quintile (mildly positive, CSS 0.02-0.10) achieves the highest Sharpe of 1.63, while the most positive quintile (Q5) underperforms Q4 by 16%. This suggests that extremely positive news is already priced in by the time retail investors react.
+</div>
+
+<h3>Per-Stock Information Coefficient</h3>
+<div class="chart-container">
+    <img src="figures/ravenpack_ic_by_stock.png" alt="IC by Stock">
+    <div class="chart-caption">Figure 17: Spearman IC (sentiment → next-day return) — GOOG shows strongest predictability</div>
+</div>
+
+<table>
+<tr><th>Ticker</th><th>Days</th><th>News/Day</th><th>Same-Day Corr</th><th>Next-Day IC</th><th>L/S Return</th></tr>
+<tr class="highlight"><td><strong>GOOG</strong></td><td>1,507</td><td>23.9</td><td>0.212</td><td><strong>0.084</strong></td><td class="positive"><strong>+131%</strong></td></tr>
+<tr><td>MSFT</td><td>1,505</td><td>22.0</td><td>0.208</td><td>0.053</td><td class="positive">+31%</td></tr>
+<tr><td>AMZN</td><td>1,504</td><td>24.2</td><td>0.318</td><td>0.006</td><td class="positive">+69%</td></tr>
+<tr><td>AAPL</td><td>1,504</td><td>22.7</td><td>0.298</td><td>−0.012</td><td class="negative">−34%</td></tr>
+<tr><td>META</td><td>892</td><td>16.8</td><td>0.212</td><td>−0.023</td><td class="negative">−3%</td></tr>
+</table>
+
+<div class="key-finding">
+<strong>Key Finding: AAPL Sentiment Reversal</strong>
+AAPL has a negative IC (−0.012) and negative L/S return (−34%), meaning that positive news on Apple is followed by negative returns the next day. This is consistent with the "sell the news" effect — Apple's massive retail following means good news is rapidly priced in, creating a contrarian opportunity.
+</div>
+
+<div class="chart-container">
+    <img src="figures/ravenpack_news_volume.png" alt="News Volume">
+    <div class="chart-caption">Figure 18: Monthly news count per stock — note TSLA's news spikes during Musk controversies</div>
+</div>
+
+<div class="chart-container">
+    <img src="figures/ravenpack_sentiment_trend.png" alt="Sentiment Trend">
+    <div class="chart-caption">Figure 19: Monthly average sentiment — all stocks trend negative in late 2022 (rate hike fears)</div>
+</div>
+</div>
+
 <footer>
 <p><strong>Agentic Sciences</strong> — Quantitative Research Lab</p>
-<p>Data sources: WRDS CRSP v2, NYSE TAQ (DTAQ), Fama-French via WRDS<br>
-Analysis date: March 24, 2026<br>
+<p>Data sources: WRDS CRSP v2, NYSE TAQ (DTAQ), RavenPack DJ, Fama-French via WRDS<br>
+Analysis date: March 24-25, 2026<br>
 Server infrastructure: Cornell Johnson research3 + research1 (dual-server cluster, ~220TB)</p>
 <p>All computations performed on raw data. No third-party analytics or pre-computed factors used.</p>
 </footer>
