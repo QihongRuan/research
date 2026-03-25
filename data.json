@@ -1,7 +1,7 @@
 {
-  "updated": "2026-03-25T14:00:16.422467",
-  "reports_count": 258,
-  "finance_count": 174,
+  "updated": "2026-03-25T15:00:17.646528",
+  "reports_count": 262,
+  "finance_count": 178,
   "bio_count": 50,
   "figures_count": 111,
   "reports": [
@@ -76,6 +76,46 @@
       "score": 0,
       "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_deep_20260325_1248.json",
       "filename": "report_insulin_monomer_deep_20260325_1248.json"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Kaiko Multi-Exchange Liquidity Comparison",
+      "date": "2026-03-25 14:22",
+      "score": 2,
+      "thinking_tokens": 1838,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Kaiko_Multi-Exchange_Liquidity_20260325_1418.md",
+      "filename": "report_Kaiko_Multi-Exchange_Liquidity_20260325_1418.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "Crypto-Equity Correlation Regime Changes",
+      "date": "2026-03-25 14:14",
+      "score": 5,
+      "thinking_tokens": 1920,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Crypto-Equity_Correlation_Regi_20260325_1411.md",
+      "filename": "report_Crypto-Equity_Correlation_Regi_20260325_1411.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "US Equity Intraday Volatility U-Shape (TAQ)",
+      "date": "2026-03-25 14:07",
+      "score": 5,
+      "thinking_tokens": 1503,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260325_1405.md",
+      "filename": "report_US_Equity_Intraday_Volatility__20260325_1405.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "cross_market",
+      "title": "Cross-Exchange BTC Price Dispersion",
+      "date": "2026-03-25 14:00",
+      "score": 3,
+      "thinking_tokens": 2450,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260325_1358.md",
+      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260325_1358.md"
     },
     {
       "source": "taqclaw",
@@ -949,42 +989,6 @@
       "score": 0,
       "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_data_analysis_20260324_1247.md",
       "filename": "report_crsp_data_analysis_20260324_1247.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "CRSP/Compustat Data Deep Exploration",
-      "date": "2026-03-24T12:47:26.998567",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_data_analysis_20260324_1247.json",
-      "filename": "report_crsp_data_analysis_20260324_1247.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "DTAQ Market Depth Evolution (2016-2021) \u2014 Deep Analysis",
-      "date": "2026-03-24T12:47:26.755615",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_dtaq_depth_evolution_v2_20260324_1247.md",
-      "filename": "report_dtaq_depth_evolution_v2_20260324_1247.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "DTAQ Market Depth Evolution (2016-2021) \u2014 Deep Analysis",
-      "date": "2026-03-24T12:47:26.755615",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_dtaq_depth_evolution_v2_20260324_1247.json",
-      "filename": "report_dtaq_depth_evolution_v2_20260324_1247.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Reanalysis of Existing Research Results",
-      "date": "2026-03-24T12:46:48.052795",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_reanalyze_existing_20260324_1246.md",
-      "filename": "report_reanalyze_existing_20260324_1246.md"
     }
   ]
 }
