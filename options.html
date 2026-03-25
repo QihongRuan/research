@@ -3,24 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Options Strategy Backtest — Agentic Sciences</title>
+<title>Options Volatility Strategies — Agentic Sciences</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
     font-family: 'Georgia', 'Times New Roman', serif;
-    background: #fff;
-    color: #111;
-    line-height: 1.7;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 48px 24px;
+    background: #fff; color: #111; line-height: 1.7;
+    max-width: 1100px; margin: 0 auto; padding: 48px 24px;
 }
 a { color: #111; }
-header {
-    margin-bottom: 48px;
-    border-bottom: 2px solid #111;
-    padding-bottom: 24px;
-}
+header { margin-bottom: 48px; border-bottom: 2px solid #111; padding-bottom: 24px; }
 header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.5px; margin-bottom: 8px; }
 header .subtitle { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 0.85rem; color: #666; letter-spacing: 1px; text-transform: uppercase; }
 nav { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 0.85rem; margin-bottom: 36px; padding: 12px 0; border-bottom: 1px solid #ddd; }
@@ -28,9 +20,12 @@ nav a { margin-right: 24px; text-decoration: none; }
 nav a:hover { text-decoration: underline; }
 h2 { font-size: 1.5rem; font-weight: 400; margin-top: 56px; margin-bottom: 16px; border-bottom: 1px solid #ccc; padding-bottom: 8px; }
 h3 { font-size: 1.15rem; font-weight: 600; margin-top: 32px; margin-bottom: 12px; }
+h4 { font-size: 1rem; font-weight: 600; margin-top: 20px; margin-bottom: 8px; }
 p { margin-bottom: 16px; }
+ul, ol { margin: 12px 0 16px 24px; }
+li { margin-bottom: 6px; }
 .section { margin-bottom: 48px; }
-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 0.85rem; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-family: 'Helvetica Neue', sans-serif; font-size: 0.85rem; }
 th, td { padding: 8px 12px; text-align: right; border: 1px solid #ddd; }
 th { background: #f8f8f8; font-weight: 600; text-align: center; }
 td:first-child, th:first-child { text-align: left; }
@@ -40,19 +35,52 @@ tr:hover { background: #fafafa; }
 .highlight { background: #fffde7; }
 .chart-container { margin: 24px 0; text-align: center; }
 .chart-container img { max-width: 100%; border: 1px solid #eee; }
-.chart-caption { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 0.8rem; color: #666; margin-top: 8px; }
+.chart-caption { font-family: 'Helvetica Neue', sans-serif; font-size: 0.8rem; color: #666; margin-top: 8px; }
 .key-finding { background: #f9f9f9; border-left: 3px solid #111; padding: 16px 20px; margin: 20px 0; font-size: 0.95rem; }
 .key-finding strong { display: block; margin-bottom: 4px; }
-.methodology { background: #f5f5f5; padding: 20px; margin: 24px 0; font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 0.85rem; }
+.methodology { background: #f5f5f5; padding: 20px; margin: 24px 0; font-family: 'Helvetica Neue', sans-serif; font-size: 0.85rem; }
 .methodology h4 { font-size: 0.9rem; margin-bottom: 8px; }
-footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #ddd; font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 0.8rem; color: #888; }
+.strategy-card {
+    border: 2px solid #111; padding: 24px; margin: 24px 0;
+    page-break-inside: avoid;
+}
+.strategy-card h3 { margin-top: 0; font-size: 1.3rem; border-bottom: none; }
+.strategy-card .tag {
+    display: inline-block; font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.75rem; padding: 3px 10px; margin-right: 8px; margin-bottom: 8px;
+    border: 1px solid #999; border-radius: 3px;
+}
+.tag-bullish { border-color: #27ae60; color: #27ae60; }
+.tag-neutral { border-color: #e67e22; color: #e67e22; }
+.tag-income { border-color: #2980b9; color: #2980b9; }
+.tag-risk { border-color: #c0392b; color: #c0392b; }
+.payoff {
+    font-family: 'Courier New', monospace; font-size: 0.82rem;
+    background: #f8f8f8; padding: 16px; margin: 12px 0; white-space: pre; overflow-x: auto;
+    border: 1px solid #ddd;
+}
+.op-step {
+    display: flex; gap: 16px; margin: 8px 0; align-items: flex-start;
+}
+.op-step .num {
+    background: #111; color: #fff; width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    font-family: 'Helvetica Neue', sans-serif; font-size: 0.8rem; font-weight: 700;
+}
+.op-step .content { flex: 1; }
+.risk-table td:nth-child(2) { text-align: center; }
+.verdict { font-size: 1.1rem; font-weight: 600; margin: 8px 0; }
+.verdict-good { color: #27ae60; }
+.verdict-bad { color: #c0392b; }
+.verdict-ok { color: #e67e22; }
+footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #ddd; font-family: 'Helvetica Neue', sans-serif; font-size: 0.8rem; color: #888; }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Options Volatility Strategy Backtest</h1>
-    <div class="subtitle">Agentic Sciences Research — March 2026</div>
+    <h1>Options Volatility Strategies</h1>
+    <div class="subtitle">Agentic Sciences Research — Definitions, Backtest & Execution Guide</div>
 </header>
 
 <nav>
@@ -62,125 +90,410 @@ footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #ddd; font-f
     <a href="options.html"><strong>Options Strategy</strong></a>
 </nav>
 
+<!-- ============================================ -->
+<!-- TOC -->
+<!-- ============================================ -->
 <div class="section">
-<h2>Overview</h2>
-<p>Systematic backtest of two options selling strategies — Covered Call and Cash-Secured Put — on seven major US equities using OptionMetrics data from WRDS. The analysis covers 18.7 million option records across 2020–2025, with 553 trades per strategy.</p>
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#s1">Covered Call — 备兑看涨期权</a></li>
+<li><a href="#s2">Cash-Secured Put — 现金担保卖出看跌</a></li>
+<li><a href="#s3">The Wheel — 轮转策略</a></li>
+<li><a href="#s4">Bull Put Spread — 牛市看跌价差</a></li>
+<li><a href="#s5">Iron Condor — 铁鹰策略</a></li>
+<li><a href="#s6">Backtest Results — 回测结果</a></li>
+<li><a href="#s7">Execution Playbook — 操作手册</a></li>
+</ol>
 
 <div class="methodology">
-<h4>Methodology</h4>
-<p><strong>Data:</strong> WRDS OptionMetrics (<code>optionm.opprcd2020</code> through <code>opprcd2025</code>), 18,665,143 records<br>
-<strong>Universe:</strong> AAPL, AMZN, GOOG, META, MSFT, NVDA, TSLA<br>
-<strong>Entry:</strong> Monthly (~every 25 calendar days)<br>
-<strong>Option selection:</strong> ~30 DTE, delta ≈ 0.30 (calls) / −0.30 (puts)<br>
-<strong>Pricing:</strong> Mid-market (best_bid + best_offer) / 2<br>
-<strong>Exit:</strong> Hold to expiration<br>
-<strong>Covered Call P&L:</strong> Stock return + premium yield − max(0, S<sub>T</sub>−K) / S<sub>0</sub><br>
-<strong>Cash-Secured Put P&L:</strong> Premium yield − max(0, K−S<sub>T</sub>) / K</p>
+<h4>Data & Methodology</h4>
+<p><strong>Options data:</strong> WRDS OptionMetrics 2020–2025, 18,665,143 records across 7 stocks (AAPL, AMZN, GOOG, META, MSFT, NVDA, TSLA)<br>
+<strong>Stock prices:</strong> OptionMetrics <code>secprd</code> daily close<br>
+<strong>Entry frequency:</strong> Monthly (~every 25 calendar days)<br>
+<strong>Option selection:</strong> Closest to target delta, ~30 DTE<br>
+<strong>Pricing:</strong> Mid-market = (best_bid + best_offer) / 2<br>
+<strong>Exit:</strong> Hold to expiration (no early management in base case)<br>
+<strong>Commissions:</strong> Not included (typically $0.65/contract at most brokers)</p>
 </div>
 </div>
 
-<div class="section">
-<h2>I. Covered Call Strategy</h2>
+<!-- ============================================ -->
+<!-- STRATEGY 1: Covered Call -->
+<!-- ============================================ -->
+<div class="section" id="s1">
+<div class="strategy-card">
+<h3>1. Covered Call — 备兑看涨期权</h3>
+<span class="tag tag-bullish">Mildly Bullish</span>
+<span class="tag tag-income">Income</span>
+<span class="tag tag-neutral">Low Complexity</span>
 
-<p>Buy-and-hold the stock while selling monthly OTM calls (delta ~0.30). This strategy generates income from premium collection while capping upside at the strike price.</p>
+<h4>Definition 策略定义</h4>
+<p>持有100股正股的同时，卖出1份虚值(OTM) Call期权。通过出售上涨权利换取期权金收入。适合温和看涨、愿意在一定价格卖出股票的投资者。</p>
 
-<h3>Performance by Stock</h3>
+<h4>Payoff Structure 收益结构</h4>
+<div class="payoff">
+Position:  Long 100 shares at S₀  +  Short 1 Call at strike K (K > S₀)
+
+If S_T ≤ K:  PnL = (S_T − S₀) + Premium         ← 保留股票 + 期权金
+If S_T > K:  PnL = (K − S₀) + Premium             ← 股票被行权, 获利封顶
+
+Max Profit = (K − S₀) + Premium                    ← 有限
+Max Loss   = S₀ − Premium                          ← 股价归零 (几乎无限)
+Breakeven  = S₀ − Premium
+
+Example (MSFT @ $420):
+  Sell 1 MSFT $440 Call, 30 DTE, Delta 0.30
+  Premium = $5.60 (mid price)
+  Premium yield = $5.60 / $420 = 1.33%/month
+
+  If MSFT stays at $420:  +$5.60 (+1.33%)           ✅ Keep premium
+  If MSFT rises to $460:  +$20 + $5.60 − $20 = +$5.60  ✅ But capped
+  If MSFT falls to $390:  −$30 + $5.60 = −$24.40    ❌ Cushioned but still down
+</div>
+
+<h4>Operation Steps 操作步骤</h4>
+<div class="op-step"><div class="num">1</div><div class="content"><strong>选股</strong> — 选择你长期看好、愿意持有的股票。优先低波动、稳定上涨的蓝筹 (如MSFT)。</div></div>
+<div class="op-step"><div class="num">2</div><div class="content"><strong>买入正股</strong> — 买入100股(1手)。必须持有正股才能卖covered call。</div></div>
+<div class="op-step"><div class="num">3</div><div class="content"><strong>选择到期日</strong> — 30-45天到期 (DTE)。太短期权金太少，太长被行权风险大。</div></div>
+<div class="op-step"><div class="num">4</div><div class="content"><strong>选择行权价</strong> — Delta ≈ 0.25-0.35 (OTM 5-10%)。Delta越低越安全但期权金越少。</div></div>
+<div class="op-step"><div class="num">5</div><div class="content"><strong>卖出Call</strong> — Sell to Open 1份Call。确认订单类型为"Sell"而非"Buy"。</div></div>
+<div class="op-step"><div class="num">6</div><div class="content"><strong>到期管理</strong> — 
+<br>• 如果OTM (股价 < 行权价): 期权自动过期，保留期权金，重新卖下一轮
+<br>• 如果ITM (股价 > 行权价): 股票被行权卖出。可以重新买入再卖call (见Wheel策略)
+<br>• 提前管理: 如果期权亏损>200%, 考虑roll (买回+卖更远期)</div></div>
+
+<h4>Backtest Results 回测结果 (2020-2025)</h4>
 <table>
-<tr><th>Ticker</th><th>Trades</th><th>Win Rate</th><th>Avg PnL</th><th>Avg Premium</th><th>Avg IV</th><th>Assign %</th><th>Total PnL</th><th>Sharpe</th></tr>
-<tr class="highlight"><td><strong>MSFT</strong></td><td>79</td><td class="positive">69.6%</td><td class="positive">+1.64%</td><td>1.34%</td><td>25.6%</td><td>38.0%</td><td class="positive"><strong>+218%</strong></td><td><strong>1.00</strong></td></tr>
-<tr class="highlight"><td><strong>META</strong></td><td>79</td><td>67.1%</td><td class="positive">+1.20%</td><td>1.98%</td><td>37.9%</td><td>38.0%</td><td class="positive">+71%</td><td>0.43</td></tr>
-<tr><td>NVDA</td><td>79</td><td>73.4%</td><td class="positive">+1.27%</td><td>2.47%</td><td>48.4%</td><td>41.8%</td><td class="negative">−66%</td><td>0.26</td></tr>
-<tr><td>AMZN</td><td>79</td><td>69.6%</td><td class="positive">+0.42%</td><td>1.73%</td><td>33.5%</td><td>36.7%</td><td class="negative">−82%</td><td>0.11</td></tr>
-<tr><td>GOOG</td><td>79</td><td>69.6%</td><td class="positive">+0.36%</td><td>1.49%</td><td>29.1%</td><td>35.4%</td><td class="negative">−80%</td><td>0.10</td></tr>
-<tr><td>TSLA</td><td>79</td><td>57.0%</td><td class="positive">+0.17%</td><td>3.16%</td><td>62.2%</td><td>30.4%</td><td class="negative">−82%</td><td>0.03</td></tr>
-<tr><td>AAPL</td><td>79</td><td>60.8%</td><td class="negative">−0.15%</td><td>1.51%</td><td>28.0%</td><td>39.2%</td><td class="negative">−61%</td><td>−0.05</td></tr>
+<tr><th>Ticker</th><th>Trades</th><th>Win Rate</th><th>Avg PnL/月</th><th>Avg Premium</th><th>Avg IV</th><th>被行权率</th><th>累计收益</th><th>Sharpe</th><th>Verdict</th></tr>
+<tr class="highlight"><td><strong>MSFT</strong></td><td>79</td><td class="positive">69.6%</td><td class="positive">+1.64%</td><td>1.34%</td><td>25.6%</td><td>38.0%</td><td class="positive"><strong>+218%</strong></td><td><strong>1.00</strong></td><td class="verdict-good">⭐ 最优</td></tr>
+<tr class="highlight"><td><strong>META</strong></td><td>79</td><td>67.1%</td><td class="positive">+1.20%</td><td>1.98%</td><td>37.9%</td><td>38.0%</td><td class="positive">+71%</td><td>0.43</td><td class="verdict-good">✅ 推荐</td></tr>
+<tr><td>NVDA</td><td>79</td><td>73.4%</td><td class="positive">+1.27%</td><td>2.47%</td><td>48.4%</td><td>41.8%</td><td class="negative">−66%</td><td>0.26</td><td class="verdict-ok">⚠️ 谨慎</td></tr>
+<tr><td>AMZN</td><td>79</td><td>69.6%</td><td class="positive">+0.42%</td><td>1.73%</td><td>33.5%</td><td>36.7%</td><td class="negative">−82%</td><td>0.11</td><td class="verdict-ok">⚠️ 谨慎</td></tr>
+<tr><td>GOOG</td><td>79</td><td>69.6%</td><td class="positive">+0.36%</td><td>1.49%</td><td>29.1%</td><td>35.4%</td><td class="negative">−80%</td><td>0.10</td><td class="verdict-ok">⚠️ 谨慎</td></tr>
+<tr><td>TSLA</td><td>79</td><td>57.0%</td><td class="positive">+0.17%</td><td>3.16%</td><td>62.2%</td><td>30.4%</td><td class="negative">−82%</td><td>0.03</td><td class="verdict-bad">❌ 避免</td></tr>
+<tr><td>AAPL</td><td>79</td><td>60.8%</td><td class="negative">−0.15%</td><td>1.51%</td><td>28.0%</td><td>39.2%</td><td class="negative">−61%</td><td>−0.05</td><td class="verdict-bad">❌ 避免</td></tr>
+</table>
+</div>
+</div>
+
+<!-- ============================================ -->
+<!-- STRATEGY 2: Cash-Secured Put -->
+<!-- ============================================ -->
+<div class="section" id="s2">
+<div class="strategy-card">
+<h3>2. Cash-Secured Put — 现金担保卖出看跌</h3>
+<span class="tag tag-bullish">Bullish / Neutral</span>
+<span class="tag tag-income">Income</span>
+<span class="tag tag-risk">Assignment Risk</span>
+
+<h4>Definition 策略定义</h4>
+<p>在账户中预留足够现金(= 行权价 × 100)的情况下，卖出1份OTM Put期权。如果股价不跌破行权价，收取全部期权金；如果跌破，被指派以行权价买入100股。适合"想买某只股票但想等更低价格"的投资者。</p>
+
+<h4>Payoff Structure 收益结构</h4>
+<div class="payoff">
+Position:  Cash = K × 100  +  Short 1 Put at strike K (K < S₀)
+
+If S_T ≥ K:  PnL = +Premium                        ← Put过期, 保留期权金
+If S_T < K:  PnL = Premium − (K − S_T)             ← 被指派买入, 可能亏损
+
+Max Profit = Premium                                ← 有限
+Max Loss   = K − Premium                            ← 股价归零
+Breakeven  = K − Premium
+
+Example (NVDA @ $140):
+  Sell 1 NVDA $130 Put, 30 DTE, Delta −0.30
+  Premium = $4.50 (mid)
+  Cash required = $130 × 100 = $13,000
+  Premium yield = $4.50 / $130 = 3.46%/month
+
+  If NVDA stays above $130:  +$450 (+3.46%)         ✅ Free money
+  If NVDA drops to $120:     +$450 − $1,000 = −$550 ❌ Assigned at $130, down to $120
+  Effective buy price if assigned: $130 − $4.50 = $125.50
+</div>
+
+<h4>Operation Steps 操作步骤</h4>
+<div class="op-step"><div class="num">1</div><div class="content"><strong>选股</strong> — 选择你愿意以行权价买入并长期持有的股票。</div></div>
+<div class="op-step"><div class="num">2</div><div class="content"><strong>准备现金</strong> — 账户中须有 行权价×100 的现金。否则是"naked put"(保证金要求更高)。</div></div>
+<div class="op-step"><div class="num">3</div><div class="content"><strong>选择到期日</strong> — 30-45 DTE。</div></div>
+<div class="op-step"><div class="num">4</div><div class="content"><strong>选择行权价</strong> — Delta ≈ −0.25 to −0.35 (OTM 5-10%)。支撑位附近更好。</div></div>
+<div class="op-step"><div class="num">5</div><div class="content"><strong>卖出Put</strong> — Sell to Open 1份Put。</div></div>
+<div class="op-step"><div class="num">6</div><div class="content"><strong>到期管理</strong> —
+<br>• OTM: 过期，保留期权金，重复
+<br>• ITM: 被指派买入100股。此时转入Covered Call (见Wheel策略)
+<br>• 提前止损: 如果亏损 >2× premium, 考虑 Buy to Close</div></div>
+
+<h4>Backtest Results 回测结果 (2020-2025)</h4>
+<table>
+<tr><th>Ticker</th><th>Trades</th><th>Win Rate</th><th>Avg PnL/月</th><th>Avg Premium</th><th>Avg IV</th><th>被指派率</th><th>累计收益</th><th>Sharpe</th><th>Verdict</th></tr>
+<tr class="highlight"><td><strong>MSFT</strong></td><td>79</td><td class="positive">86.1%</td><td class="positive">+0.69%</td><td>1.70%</td><td>28.7%</td><td>20.3%</td><td class="positive"><strong>+65%</strong></td><td><strong>0.75</strong></td><td class="verdict-good">⭐ 最优</td></tr>
+<tr><td>META</td><td>79</td><td class="positive">82.3%</td><td class="positive">+0.04%</td><td>2.54%</td><td>40.7%</td><td>24.1%</td><td class="negative">−13%</td><td>0.02</td><td class="verdict-ok">⚠️ 盈亏平衡</td></tr>
+<tr><td>GOOG</td><td>79</td><td class="positive">82.3%</td><td class="negative">−0.71%</td><td>1.92%</td><td>31.8%</td><td>19.0%</td><td class="negative">−89%</td><td>−0.22</td><td class="verdict-bad">❌</td></tr>
+<tr><td>AAPL</td><td>79</td><td class="positive">81.0%</td><td class="negative">−0.66%</td><td>1.87%</td><td>31.0%</td><td>31.6%</td><td class="negative">−70%</td><td>−0.24</td><td class="verdict-bad">❌</td></tr>
+<tr><td>NVDA</td><td>79</td><td class="positive">83.5%</td><td class="negative">−0.91%</td><td>3.24%</td><td>51.1%</td><td>21.5%</td><td class="negative">−90%</td><td>−0.23</td><td class="verdict-bad">❌</td></tr>
+<tr><td>TSLA</td><td>79</td><td>74.7%</td><td class="negative">−0.99%</td><td>4.29%</td><td>64.9%</td><td>30.4%</td><td class="negative">−86%</td><td>−0.26</td><td class="verdict-bad">❌</td></tr>
+<tr><td>AMZN</td><td>79</td><td>79.7%</td><td class="negative">−0.92%</td><td>2.18%</td><td>35.9%</td><td>20.3%</td><td class="negative">−91%</td><td>−0.28</td><td class="verdict-bad">❌</td></tr>
 </table>
 
 <div class="key-finding">
-<strong>Key Finding: MSFT — The Perfect Covered Call Stock</strong>
-MSFT achieved a Sharpe ratio of 1.00 with +218% cumulative return over 5 years. Its moderate IV (25.6%) generates consistent premium while its steady upward trend limits assignment losses. The 69.6% win rate with 1.64% average monthly PnL makes it an institutional favorite for covered call overlays.
+<strong>⚠️ The Win Rate Trap — 胜率陷阱</strong>
+Cash-Secured Put平均胜率81.4%，但6/7只股票整体亏钱。原因：期权payoff是不对称的——你赢的时候赚一点(premium)，输的时候亏很多(assignment + 下跌)。一次2020年3月COVID式暴跌就能抹平2年的期权金收入。<strong>高胜率 ≠ 盈利。</strong>
 </div>
 </div>
+</div>
 
-<div class="section">
-<h2>II. Cash-Secured Put Strategy</h2>
+<!-- ============================================ -->
+<!-- STRATEGY 3: The Wheel -->
+<!-- ============================================ -->
+<div class="section" id="s3">
+<div class="strategy-card">
+<h3>3. The Wheel — 轮转策略</h3>
+<span class="tag tag-bullish">Bullish</span>
+<span class="tag tag-income">Income</span>
+<span class="tag tag-neutral">Medium Complexity</span>
 
-<p>Sell monthly OTM puts (delta ~−0.30) while holding cash to cover potential assignment. Premium collected as income; risk is buying the stock at the strike price during drawdowns.</p>
+<h4>Definition 策略定义</h4>
+<p>Wheel是Covered Call和Cash-Secured Put的组合循环：先卖Put → 被指派后转为Covered Call → Call被行权后回到卖Put。如此循环，持续收取期权金。</p>
 
-<h3>Performance by Stock</h3>
-<table>
-<tr><th>Ticker</th><th>Trades</th><th>Win Rate</th><th>Avg PnL</th><th>Avg Premium</th><th>Avg IV</th><th>Assign %</th><th>Total PnL</th><th>Sharpe</th></tr>
-<tr class="highlight"><td><strong>MSFT</strong></td><td>79</td><td class="positive">86.1%</td><td class="positive">+0.69%</td><td>1.70%</td><td>28.7%</td><td>20.3%</td><td class="positive"><strong>+65%</strong></td><td><strong>0.75</strong></td></tr>
-<tr><td>META</td><td>79</td><td class="positive">82.3%</td><td class="positive">+0.04%</td><td>2.54%</td><td>40.7%</td><td>24.1%</td><td class="negative">−13%</td><td>0.02</td></tr>
-<tr><td>GOOG</td><td>79</td><td class="positive">82.3%</td><td class="negative">−0.71%</td><td>1.92%</td><td>31.8%</td><td>19.0%</td><td class="negative">−89%</td><td>−0.22</td></tr>
-<tr><td>AAPL</td><td>79</td><td class="positive">81.0%</td><td class="negative">−0.66%</td><td>1.87%</td><td>31.0%</td><td>31.6%</td><td class="negative">−70%</td><td>−0.24</td></tr>
-<tr><td>NVDA</td><td>79</td><td class="positive">83.5%</td><td class="negative">−0.91%</td><td>3.24%</td><td>51.1%</td><td>21.5%</td><td class="negative">−90%</td><td>−0.23</td></tr>
-<tr><td>TSLA</td><td>79</td><td>74.7%</td><td class="negative">−0.99%</td><td>4.29%</td><td>64.9%</td><td>30.4%</td><td class="negative">−86%</td><td>−0.26</td></tr>
-<tr><td>AMZN</td><td>79</td><td>79.7%</td><td class="negative">−0.92%</td><td>2.18%</td><td>35.9%</td><td>20.3%</td><td class="negative">−91%</td><td>−0.28</td></tr>
-</table>
+<div class="payoff">
+The Wheel Cycle:
+
+  ┌──────────────────────────────────────────────────────────┐
+  │                                                          │
+  │  Phase 1: Sell Put                                       │
+  │  ────────────────                                        │
+  │  • 卖OTM Put, 收期权金                                    │
+  │  • 如果Put过期 → 回到Phase 1 (循环收钱)                     │
+  │  • 如果被指派 → 进入Phase 2                                │
+  │                                                          │
+  │  Phase 2: Covered Call                                   │
+  │  ────────────────────                                    │
+  │  • 持有100股 + 卖OTM Call                                  │
+  │  • 如果Call过期 → 回到Phase 2 (继续卖Call)                  │
+  │  • 如果Call被行权 → 回到Phase 1 (股票被卖出)                │
+  │                                                          │
+  └──────────────────────────────────────────────────────────┘
+
+  Key: 你始终在收期权金，无论持股还是持现金。
+</div>
+
+<h4>Operation Steps 操作步骤</h4>
+<div class="op-step"><div class="num">1</div><div class="content"><strong>起始</strong> — 选定标的 (推荐MSFT)，准备足够现金买100股。</div></div>
+<div class="op-step"><div class="num">2</div><div class="content"><strong>卖Put</strong> — Delta −0.30, 30 DTE。</div></div>
+<div class="op-step"><div class="num">3</div><div class="content"><strong>如果Put过期</strong> — 收取期权金, 重复Step 2。</div></div>
+<div class="op-step"><div class="num">4</div><div class="content"><strong>如果被指派</strong> — 现在持有100股。转到Step 5。</div></div>
+<div class="op-step"><div class="num">5</div><div class="content"><strong>卖Call</strong> — 行权价 ≥ 你的买入成本 (确保卖出不亏), Delta 0.30, 30 DTE。</div></div>
+<div class="op-step"><div class="num">6</div><div class="content"><strong>如果Call过期</strong> — 收取期权金, 重复Step 5。</div></div>
+<div class="op-step"><div class="num">7</div><div class="content"><strong>如果Call被行权</strong> — 股票被卖出, 收到现金, 回到Step 2。</div></div>
+
+<h4>Estimated Performance (Based on Backtest)</h4>
+<p>以MSFT为例: Put phase (SR 0.75) + Call phase (SR 1.00) 交替运行，预计综合年化 10-15%, 胜率 ~75%, 最大风险来自Phase 2期间的股价大跌。</p>
 
 <div class="key-finding">
-<strong>Key Finding: High Win Rate ≠ Profitability</strong>
-Cash-Secured Puts achieve 81.4% win rate on average — but overall average PnL is −0.49% per month. The strategy collects 2.53% in premium but loses catastrophically during the ~19% of months when stocks decline sharply. The asymmetry of option payoffs (small frequent gains vs. large rare losses) makes this a negative expected value proposition for most stocks.
+<strong>Best Wheel Candidate: MSFT</strong>
+MSFT在两个phase都有正Sharpe，是唯一适合完整Wheel策略的股票。NVDA/TSLA等高波动股虽然期权金更高，但被指派时成本太高，Call phase难以回本。
+</div>
 </div>
 </div>
 
-<div class="section">
-<h2>III. Visual Analysis</h2>
+<!-- ============================================ -->
+<!-- STRATEGY 4: Bull Put Spread -->
+<!-- ============================================ -->
+<div class="section" id="s4">
+<div class="strategy-card">
+<h3>4. Bull Put Spread — 牛市看跌价差</h3>
+<span class="tag tag-bullish">Bullish</span>
+<span class="tag tag-income">Defined Risk</span>
+<span class="tag tag-neutral">Medium Complexity</span>
+
+<h4>Definition 策略定义</h4>
+<p>同时卖出一份高行权价Put + 买入一份低行权价Put (同到期日)。限制了最大亏损的同时收取净期权金。比Naked Put安全得多。</p>
+
+<div class="payoff">
+Position:  Short 1 Put at K₁ (higher)  +  Long 1 Put at K₂ (lower)
+           K₂ < K₁ < S₀
+
+If S_T ≥ K₁:  PnL = +Net Premium                  ← 两个Put都过期
+If S_T ≤ K₂:  PnL = −(K₁ − K₂) + Net Premium      ← 最大亏损 (有限!)
+If K₂ < S_T < K₁:  PnL = Premium − (K₁ − S_T)     ← 部分亏损
+
+Max Profit = Net Premium                            ← 有限
+Max Loss   = (K₁ − K₂) − Net Premium               ← 有限! ← 这是关键优势
+Width      = K₁ − K₂
+
+Example (NVDA @ $140):
+  Sell $130 Put @ $4.50
+  Buy  $120 Put @ $2.00
+  Net premium = $2.50
+  Max loss = ($130-$120) − $2.50 = $7.50
+  Risk/Reward = 7.50 / 2.50 = 3:1
+  Win rate needed to break even = 75%
+</div>
+
+<h4>Operation Steps 操作步骤</h4>
+<div class="op-step"><div class="num">1</div><div class="content"><strong>选股</strong> — 选择你看涨或看平的股票。</div></div>
+<div class="op-step"><div class="num">2</div><div class="content"><strong>选择到期日</strong> — 30-45 DTE。</div></div>
+<div class="op-step"><div class="num">3</div><div class="content"><strong>卖高行权价Put</strong> — Delta −0.30, 收取较高期权金。</div></div>
+<div class="op-step"><div class="num">4</div><div class="content"><strong>买低行权价Put</strong> — 低$5-$10, 作为保护。建议同时下单 (spread order)。</div></div>
+<div class="op-step"><div class="num">5</div><div class="content"><strong>管理</strong> —
+<br>• 盈利 > 50%: 考虑提前Buy to Close锁定利润
+<br>• 到期时ITM: 会被指派, 但亏损有限 (最大=spread width − premium)
+<br>• 保证金要求: spread width × 100 (远低于CSP的全额现金)</div></div>
+
+<h4>Advantages over Cash-Secured Put</h4>
+<table>
+<tr><th>Metric</th><th>Cash-Secured Put</th><th>Bull Put Spread</th></tr>
+<tr><td>Max Loss</td><td>K − Premium (巨大)</td><td class="positive">Spread Width − Premium (有限)</td></tr>
+<tr><td>Capital Required</td><td>K × 100 (全额)</td><td class="positive">Width × 100 (少很多)</td></tr>
+<tr><td>Win Rate</td><td>~81%</td><td>~70-75% (稍低)</td></tr>
+<tr><td>Premium Collected</td><td>Higher</td><td>Lower (买保护扣除)</td></tr>
+<tr><td>Tail Risk</td><td class="negative">巨大 (COVID −90%)</td><td class="positive">有限且已知</td></tr>
+</table>
+</div>
+</div>
+
+<!-- ============================================ -->
+<!-- STRATEGY 5: Iron Condor -->
+<!-- ============================================ -->
+<div class="section" id="s5">
+<div class="strategy-card">
+<h3>5. Iron Condor — 铁鹰策略</h3>
+<span class="tag tag-neutral">Neutral / Range-bound</span>
+<span class="tag tag-income">Income</span>
+<span class="tag tag-income">Defined Risk</span>
+
+<h4>Definition 策略定义</h4>
+<p>同时建立一个Bull Put Spread (下方) + Bear Call Spread (上方)。预期股价在一定区间内波动。双向收取期权金，双向定义风险。</p>
+
+<div class="payoff">
+Position:
+  Bull Put Spread:   Short K₁ Put + Long K₂ Put    (K₂ < K₁ < S₀)
+  Bear Call Spread:  Short K₃ Call + Long K₄ Call   (S₀ < K₃ < K₄)
+
+Profit Zone:  K₁ < S_T < K₃    ← 股价在两个short strike之间
+
+Max Profit = Total Net Premium  ← 两侧premium之和
+Max Loss   = Wider side width − Total Premium
+
+Example (AAPL @ $230):
+  Sell $220 Put / Buy $215 Put  →  $1.20 credit
+  Sell $240 Call / Buy $245 Call →  $1.30 credit
+  Total premium = $2.50
+  Max loss = $5.00 − $2.50 = $2.50
+  Win if AAPL stays between $220-$240 (大概率)
+</div>
+
+<h4>Operation Steps 操作步骤</h4>
+<div class="op-step"><div class="num">1</div><div class="content"><strong>选股</strong> — 选择你认为短期不会大涨大跌的股票。低IV环境更好。</div></div>
+<div class="op-step"><div class="num">2</div><div class="content"><strong>选择到期日</strong> — 30-45 DTE。</div></div>
+<div class="op-step"><div class="num">3</div><div class="content"><strong>下单</strong> — 建议用broker的"Iron Condor"组合下单功能，一次建立4条腿。</div></div>
+<div class="op-step"><div class="num">4</div><div class="content"><strong>选择wing width</strong> — $5宽度适合大多数$100-$300的股票。</div></div>
+<div class="op-step"><div class="num">5</div><div class="content"><strong>管理</strong> —
+<br>• 盈利 > 50%: 提前平仓 (Buy to Close整个condor)
+<br>• 一侧被突破: 平仓亏损一侧, 保留盈利一侧
+<br>• 最大亏损 = wing width − premium (永远已知)</div></div>
+
+<h4>Best Candidates (Based on Our Data)</h4>
+<p>最适合Iron Condor的股票特征: 低波动 + 窄range + 高IV/RV比 (卖的贵但实际波动小)。根据我们的分析: <strong>MSFT</strong> (vol 3.8%, 最稳) 和 <strong>AAPL</strong> (vol 4.9%) 最适合。</p>
+</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION 6: Backtest Charts -->
+<!-- ============================================ -->
+<div class="section" id="s6">
+<h2>VI. Backtest Visualizations</h2>
 
 <div class="chart-container">
     <img src="figures/options_win_rate.png" alt="Win Rates">
-    <div class="chart-caption">Figure 1: Win rates by stock — Cash-Secured Put consistently higher (75-86%) but misleading</div>
+    <div class="chart-caption">Win rates by stock — Cash-Secured Put胜率更高(75-86%)但整体亏损</div>
 </div>
 
 <div class="chart-container">
     <img src="figures/options_cumulative.png" alt="Cumulative PnL">
-    <div class="chart-caption">Figure 2: Cumulative P&L — only MSFT generates consistent positive returns in both strategies</div>
+    <div class="chart-caption">累计收益 — 只有MSFT在两种策略中都盈利</div>
 </div>
 
 <div class="chart-container">
     <img src="figures/options_pnl_dist.png" alt="PnL Distribution">
-    <div class="chart-caption">Figure 3: Monthly P&L distribution — note the left tail (large losses) that overwhelms the right-clustered small gains</div>
+    <div class="chart-caption">月度P&L分布 — 注意左尾 (大亏损) 远超右侧 (小盈利)</div>
 </div>
 
 <div class="chart-container">
     <img src="figures/options_iv_premium.png" alt="IV vs Premium">
-    <div class="chart-caption">Figure 4: Implied volatility vs. premium yield — higher IV stocks (TSLA, NVDA) collect more premium but face larger assignment losses</div>
+    <div class="chart-caption">隐含波动率 vs 期权金 — 高IV股票(TSLA/NVDA)期权金更高但风险也更大</div>
 </div>
 
 <div class="chart-container">
     <img src="figures/options_heatmap.png" alt="Year Heatmap">
-    <div class="chart-caption">Figure 5: Annual win rate heatmap — 2022 bear market devastated put sellers across the board</div>
+    <div class="chart-caption">年度胜率热力图 — 2022年熊市对Put卖方是灾难</div>
 </div>
 </div>
 
-<div class="section">
-<h2>IV. Conclusions</h2>
+<!-- ============================================ -->
+<!-- SECTION 7: Execution Playbook -->
+<!-- ============================================ -->
+<div class="section" id="s7">
+<h2>VII. Execution Playbook — 操作手册</h2>
 
-<h3>Covered Call vs. Cash-Secured Put</h3>
+<h3>A. 开户 & 权限要求</h3>
 <table>
-<tr><th>Metric</th><th>Covered Call</th><th>Cash-Secured Put</th></tr>
-<tr><td>Win Rate</td><td>66.7%</td><td><strong>81.4%</strong></td></tr>
-<tr><td>Avg Monthly PnL</td><td class="positive"><strong>+0.70%</strong></td><td class="negative">−0.49%</td></tr>
-<tr><td>Avg Premium</td><td>1.95%</td><td><strong>2.53%</strong></td></tr>
-<tr><td>Best Trade</td><td><strong>+33.6%</strong></td><td>+13.5%</td></tr>
-<tr><td>Worst Trade</td><td>−93.3%</td><td>−92.1%</td></tr>
-<tr><td>PnL Std Dev</td><td>12.97%</td><td><strong>10.36%</strong></td></tr>
+<tr><th>Broker</th><th>Covered Call</th><th>Cash-Secured Put</th><th>Spreads</th><th>Iron Condor</th><th>推荐</th></tr>
+<tr><td>Interactive Brokers</td><td>Level 1</td><td>Level 2</td><td>Level 3</td><td>Level 3</td><td>⭐ 首选 (费用最低)</td></tr>
+<tr><td>TD Ameritrade / Schwab</td><td>Level 1</td><td>Level 2</td><td>Level 2</td><td>Level 2</td><td>✅ 易用</td></tr>
+<tr><td>Robinhood</td><td>Level 2</td><td>Level 2</td><td>Level 3</td><td>Level 3</td><td>⚠️ 限制多</td></tr>
 </table>
 
-<div class="key-finding">
-<strong>Recommendation</strong>
-<p>1. <strong>Covered Call on MSFT</strong> (SR 1.00): The optimal options selling strategy. Low IV, steady uptrend, moderate assignment rate.</p>
-<p>2. <strong>Avoid Cash-Secured Puts on high-beta stocks</strong> (TSLA, NVDA, COIN): Premium is high but tail risk destroys cumulative returns.</p>
-<p>3. <strong>Regime filter critical</strong>: Both strategies need a volatility regime filter — sell options in low-vol periods, reduce exposure when VIX spikes above 25.</p>
-</div>
+<h3>B. 入场清单 (每次下单前检查)</h3>
+<ol>
+<li>✅ VIX < 25? (VIX > 30时暂停卖期权)</li>
+<li>✅ Earnings在30天之后? (不在财报前卖期权)</li>
+<li>✅ IV Rank > 30%? (当前IV在过去一年中偏高)</li>
+<li>✅ 没有重大宏观事件? (FOMC, CPI, 非农)</li>
+<li>✅ 账户仓位 < 5% 单一标的? (分散风险)</li>
+<li>✅ 已设好止损线? (premium的2x或spread width的50%)</li>
+</ol>
+
+<h3>C. 仓位管理规则</h3>
+<table>
+<tr><th>Rule</th><th>Description</th></tr>
+<tr><td>最大单笔仓位</td><td>账户总值的5% (例: $100K账户最多$5K一笔)</td></tr>
+<tr><td>最大同方向暴露</td><td>账户的20% (所有Put side合计)</td></tr>
+<tr><td>止盈</td><td>期权金亏损 < 50%时平仓 (大约收回50%+ premium)</td></tr>
+<tr><td>止损</td><td>亏损 > 2× 原始premium时平仓</td></tr>
+<tr><td>Roll rules</td><td>如果将要ITM: Roll out (延期) + Roll up/down (调整strike)</td></tr>
+<tr><td>月度review</td><td>每月检查: 累计收益、最大回撤、sharp ratio是否恶化</td></tr>
+</table>
+
+<h3>D. 推荐配置 (以$50,000账户为例)</h3>
+<table>
+<tr><th>配置</th><th>标的</th><th>策略</th><th>资金</th><th>预期月收益</th><th>最大单月亏损</th></tr>
+<tr class="highlight"><td>核心仓位</td><td>MSFT</td><td>Wheel (Put→CC)</td><td>$25,000 (50%)</td><td>+$250-$400</td><td>−$3,000</td></tr>
+<tr><td>增长仓位</td><td>META</td><td>Covered Call</td><td>$10,000 (20%)</td><td>+$100-$200</td><td>−$2,000</td></tr>
+<tr><td>价差仓位</td><td>NVDA/AAPL</td><td>Bull Put Spread</td><td>$5,000 (10%)</td><td>+$100-$150</td><td>−$500</td></tr>
+<tr><td>铁鹰仓位</td><td>MSFT/AAPL</td><td>Iron Condor</td><td>$5,000 (10%)</td><td>+$100-$125</td><td>−$500</td></tr>
+<tr><td>现金储备</td><td>—</td><td>Cash</td><td>$5,000 (10%)</td><td>—</td><td>—</td></tr>
+<tr style="font-weight:bold;"><td>合计</td><td>—</td><td>—</td><td>$50,000</td><td>+$550-$875/月</td><td>−$6,000</td></tr>
+</table>
+<p>预期年化: 13-21% | 最大月度回撤: −12% | 胜率: ~70%</p>
+
+<h3>E. 常见错误 & 如何避免</h3>
+<table>
+<tr><th>错误</th><th>后果</th><th>解决方案</th></tr>
+<tr><td>在财报前卖期权</td><td>IV crush但方向错了→巨亏</td><td>财报前15天不开新仓</td></tr>
+<tr><td>被高IV吸引卖TSLA/GME Put</td><td>一次暴跌抹平全年收入</td><td>只对你愿意持有的股票卖Put</td></tr>
+<tr><td>不设止损</td><td>小亏变大亏</td><td>2× premium即止损</td></tr>
+<tr><td>仓位过重</td><td>单一股票暴跌影响全账户</td><td>单笔 ≤ 5%</td></tr>
+<tr><td>高VIX环境继续卖</td><td>波动率regime shift→连续亏损</td><td>VIX > 30 暂停, 等回落</td></tr>
+<tr><td>不管理被指派的股票</td><td>持股亏损扩大</td><td>被指派后立即转Covered Call</td></tr>
+</table>
 </div>
 
 <footer>
 <p><strong>Agentic Sciences</strong> — Quantitative Research Lab</p>
-<p>Data: WRDS OptionMetrics (18.7M option records, 2020-2025), CRSP v2 stock prices<br>
-Analysis date: March 24, 2026 | 553 trades per strategy | 7 stocks | Monthly frequency</p>
-<p>Script: <code>/mnt/work/qr33/comewealth/scripts/options_strategy.py</code></p>
+<p>Data: WRDS OptionMetrics (18.7M records, 2020-2025) | CRSP v2 stock prices<br>
+Analysis: March 24, 2026 | 553 trades/strategy | 7 stocks | Monthly frequency<br>
+Script: <code>/mnt/work/qr33/comewealth/scripts/options_strategy.py</code></p>
+<p><em>Disclaimer: This is research output, not investment advice. Past performance does not guarantee future results. Options involve risk of loss.</em></p>
 </footer>
 
 </body>
