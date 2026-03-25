@@ -1,10 +1,90 @@
 {
-  "updated": "2026-03-25T08:00:11.646043",
-  "reports_count": 208,
-  "finance_count": 132,
+  "updated": "2026-03-25T09:00:14.079289",
+  "reports_count": 216,
+  "finance_count": 140,
   "bio_count": 46,
   "figures_count": 108,
   "reports": [
+    {
+      "source": "taqclaw",
+      "category": "cross_market",
+      "title": "Cross-Exchange BTC Price Dispersion",
+      "date": "2026-03-25 09:00",
+      "score": 1,
+      "thinking_tokens": 1728,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260325_0857.md",
+      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260325_0857.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Binance BTC-USDT Order Book Asymmetry",
+      "date": "2026-03-25 08:53",
+      "score": 5,
+      "thinking_tokens": 2033,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Binance_BTC-USDT_Order_Book_As_20260325_0850.md",
+      "filename": "report_Binance_BTC-USDT_Order_Book_As_20260325_0850.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Kaiko Multi-Exchange Liquidity Comparison",
+      "date": "2026-03-25 08:41",
+      "score": 5,
+      "thinking_tokens": 1787,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Kaiko_Multi-Exchange_Liquidity_20260325_0838.md",
+      "filename": "report_Kaiko_Multi-Exchange_Liquidity_20260325_0838.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "Crypto-Equity Correlation Regime Changes",
+      "date": "2026-03-25 08:34",
+      "score": 5,
+      "thinking_tokens": 1938,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Crypto-Equity_Correlation_Regi_20260325_0831.md",
+      "filename": "report_Crypto-Equity_Correlation_Regi_20260325_0831.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "US Equity Intraday Volatility U-Shape (TAQ)",
+      "date": "2026-03-25 08:28",
+      "score": 5,
+      "thinking_tokens": 1688,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260325_0824.md",
+      "filename": "report_US_Equity_Intraday_Volatility__20260325_0824.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "cross_market",
+      "title": "Cross-Exchange BTC Price Dispersion",
+      "date": "2026-03-25 08:21",
+      "score": 1,
+      "thinking_tokens": 1595,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260325_0818.md",
+      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260325_0818.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Binance BTC-USDT Order Book Asymmetry",
+      "date": "2026-03-25 08:14",
+      "score": 8,
+      "thinking_tokens": 1677,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Binance_BTC-USDT_Order_Book_As_20260325_0811.md",
+      "filename": "report_Binance_BTC-USDT_Order_Book_As_20260325_0811.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Kaiko Multi-Exchange Liquidity Comparison",
+      "date": "2026-03-25 08:02",
+      "score": 1,
+      "thinking_tokens": 1509,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Kaiko_Multi-Exchange_Liquidity_20260325_0759.md",
+      "filename": "report_Kaiko_Multi-Exchange_Liquidity_20260325_0759.md"
+    },
     {
       "source": "taqclaw",
       "category": "equity",
@@ -871,78 +951,6 @@
       "score": 0,
       "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_hexamer_prep_20260324_1215.md",
       "filename": "report_insulin_hexamer_prep_20260324_1215.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "md_simulation",
-      "title": "Insulin Hexamer Simulation",
-      "date": "2026-03-24T12:15:21.999659",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_hexamer_prep_20260324_1215.json",
-      "filename": "report_insulin_hexamer_prep_20260324_1215.json"
-    },
-    {
-      "source": "biohpc",
-      "category": "md_simulation",
-      "title": "Insulin Monomer MD Analysis",
-      "date": "2026-03-24T12:15:21.974375",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_analysis_20260324_1215.md",
-      "filename": "report_insulin_monomer_analysis_20260324_1215.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "md_simulation",
-      "title": "Insulin Monomer MD Analysis",
-      "date": "2026-03-24T12:15:21.974375",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_analysis_20260324_1215.json",
-      "filename": "report_insulin_monomer_analysis_20260324_1215.json"
-    },
-    {
-      "source": "biohpc",
-      "category": "network_biology",
-      "title": "Differential Gene Expression (GEO)",
-      "date": "2026-03-24T12:13:25.633639",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_gene_expression_analysis_20260324_1213.md",
-      "filename": "report_gene_expression_analysis_20260324_1213.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "network_biology",
-      "title": "Differential Gene Expression (GEO)",
-      "date": "2026-03-24T12:13:25.633639",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_gene_expression_analysis_20260324_1213.json",
-      "filename": "report_gene_expression_analysis_20260324_1213.json"
-    },
-    {
-      "source": "biohpc",
-      "category": "network_biology",
-      "title": "T2D Protein Interaction Network",
-      "date": "2026-03-24T12:13:25.603418",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_t2d_network_analysis_20260324_1213.md",
-      "filename": "report_t2d_network_analysis_20260324_1213.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "network_biology",
-      "title": "T2D Protein Interaction Network",
-      "date": "2026-03-24T12:13:25.603418",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_t2d_network_analysis_20260324_1213.json",
-      "filename": "report_t2d_network_analysis_20260324_1213.json"
-    },
-    {
-      "source": "biohpc",
-      "category": "drug_discovery",
-      "title": "ChEMBL Compound Screening",
-      "date": "2026-03-24T12:13:25.547751",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_chembl_screening_20260324_1213.md",
-      "filename": "report_chembl_screening_20260324_1213.md"
     }
   ]
 }
