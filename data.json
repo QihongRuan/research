@@ -1,10 +1,80 @@
 {
-  "updated": "2026-03-25T09:00:14.079289",
-  "reports_count": 216,
-  "finance_count": 140,
+  "updated": "2026-03-25T10:00:14.142429",
+  "reports_count": 223,
+  "finance_count": 147,
   "bio_count": 46,
   "figures_count": 108,
   "reports": [
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "Crypto-Equity Correlation Regime Changes",
+      "date": "2026-03-25 09:52",
+      "score": 5,
+      "thinking_tokens": 1523,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Crypto-Equity_Correlation_Regi_20260325_0949.md",
+      "filename": "report_Crypto-Equity_Correlation_Regi_20260325_0949.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "US Equity Intraday Volatility U-Shape (TAQ)",
+      "date": "2026-03-25 09:45",
+      "score": 5,
+      "thinking_tokens": 1895,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260325_0943.md",
+      "filename": "report_US_Equity_Intraday_Volatility__20260325_0943.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "cross_market",
+      "title": "Cross-Exchange BTC Price Dispersion",
+      "date": "2026-03-25 09:39",
+      "score": 1,
+      "thinking_tokens": 1527,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260325_0936.md",
+      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260325_0936.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Binance BTC-USDT Order Book Asymmetry",
+      "date": "2026-03-25 09:32",
+      "score": 5,
+      "thinking_tokens": 2227,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Binance_BTC-USDT_Order_Book_As_20260325_0929.md",
+      "filename": "report_Binance_BTC-USDT_Order_Book_As_20260325_0929.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Kaiko Multi-Exchange Liquidity Comparison",
+      "date": "2026-03-25 09:20",
+      "score": 1,
+      "thinking_tokens": 1626,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Kaiko_Multi-Exchange_Liquidity_20260325_0917.md",
+      "filename": "report_Kaiko_Multi-Exchange_Liquidity_20260325_0917.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "Crypto-Equity Correlation Regime Changes",
+      "date": "2026-03-25 09:13",
+      "score": 2,
+      "thinking_tokens": 1686,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Crypto-Equity_Correlation_Regi_20260325_0911.md",
+      "filename": "report_Crypto-Equity_Correlation_Regi_20260325_0911.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "US Equity Intraday Volatility U-Shape (TAQ)",
+      "date": "2026-03-25 09:07",
+      "score": 5,
+      "thinking_tokens": 1802,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260325_0903.md",
+      "filename": "report_US_Equity_Intraday_Volatility__20260325_0903.md"
+    },
     {
       "source": "taqclaw",
       "category": "cross_market",
@@ -888,69 +958,6 @@
       "score": 0,
       "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_colabfold_analysis_20260324_1215.json",
       "filename": "report_colabfold_analysis_20260324_1215.json"
-    },
-    {
-      "source": "biohpc",
-      "category": "md_simulation",
-      "title": "DPP-4 Inhibitor Molecular Dynamics",
-      "date": "2026-03-24T12:15:22.130647",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_dpp4_analysis_20260324_1215.md",
-      "filename": "report_dpp4_analysis_20260324_1215.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "network_biology",
-      "title": "DPP-4 Inhibitor Molecular Dynamics",
-      "date": "2026-03-24T12:15:22.130647",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_dpp4_analysis_20260324_1215.json",
-      "filename": "report_dpp4_analysis_20260324_1215.json"
-    },
-    {
-      "source": "biohpc",
-      "category": "md_simulation",
-      "title": "Insulin Lispro vs Wild-Type Comparison",
-      "date": "2026-03-24T12:15:22.114600",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_lispro_comparison_20260324_1215.md",
-      "filename": "report_lispro_comparison_20260324_1215.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "network_biology",
-      "title": "Insulin Lispro vs Wild-Type Comparison",
-      "date": "2026-03-24T12:15:22.114600",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_lispro_comparison_20260324_1215.json",
-      "filename": "report_lispro_comparison_20260324_1215.json"
-    },
-    {
-      "source": "biohpc",
-      "category": "drug_discovery",
-      "title": "T2D Drug Repurposing Pipeline",
-      "date": "2026-03-24T12:15:22.062983",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_t2d_drug_repurposing_20260324_1215.md",
-      "filename": "report_t2d_drug_repurposing_20260324_1215.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "drug_discovery",
-      "title": "T2D Drug Repurposing Pipeline",
-      "date": "2026-03-24T12:15:22.062983",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_t2d_drug_repurposing_20260324_1215.json",
-      "filename": "report_t2d_drug_repurposing_20260324_1215.json"
-    },
-    {
-      "source": "biohpc",
-      "category": "md_simulation",
-      "title": "Insulin Hexamer Simulation",
-      "date": "2026-03-24T12:15:21.999659",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_hexamer_prep_20260324_1215.md",
-      "filename": "report_insulin_hexamer_prep_20260324_1215.md"
     }
   ]
 }
