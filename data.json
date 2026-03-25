@@ -1,10 +1,46 @@
 {
-  "updated": "2026-03-25T18:00:15.477682",
-  "reports_count": 262,
+  "updated": "2026-03-25T19:00:15.357152",
+  "reports_count": 266,
   "finance_count": 178,
-  "bio_count": 50,
+  "bio_count": 54,
   "figures_count": 111,
   "reports": [
+    {
+      "source": "biohpc",
+      "category": "drug_discovery",
+      "title": "T2D Drug Repurposing \u2014 Deep Analysis",
+      "date": "2026-03-25T18:10:20.095781",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_t2d_drug_repurposing_deep_20260325_1810.md",
+      "filename": "report_t2d_drug_repurposing_deep_20260325_1810.md"
+    },
+    {
+      "source": "biohpc",
+      "category": "drug_discovery",
+      "title": "T2D Drug Repurposing \u2014 Deep Analysis",
+      "date": "2026-03-25T18:10:20.095781",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_t2d_drug_repurposing_deep_20260325_1810.json",
+      "filename": "report_t2d_drug_repurposing_deep_20260325_1810.json"
+    },
+    {
+      "source": "biohpc",
+      "category": "md_simulation",
+      "title": "Insulin Monomer 410ns Deep Analysis",
+      "date": "2026-03-25T18:10:20.039070",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_deep_20260325_1810.md",
+      "filename": "report_insulin_monomer_deep_20260325_1810.md"
+    },
+    {
+      "source": "biohpc",
+      "category": "md_simulation",
+      "title": "Insulin Monomer 410ns Deep Analysis",
+      "date": "2026-03-25T18:10:20.039070",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_deep_20260325_1810.json",
+      "filename": "report_insulin_monomer_deep_20260325_1810.json"
+    },
     {
       "source": "research1",
       "category": "equity",
@@ -953,42 +989,6 @@
       "score": 0,
       "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_deep_20260324_1248.md",
       "filename": "report_insulin_monomer_deep_20260324_1248.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "md_simulation",
-      "title": "Insulin Monomer 410ns Deep Analysis",
-      "date": "2026-03-24T12:48:31.484496",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_deep_20260324_1248.json",
-      "filename": "report_insulin_monomer_deep_20260324_1248.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Reanalysis of Existing Research Results",
-      "date": "2026-03-24T12:47:28.907270",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_reanalyze_existing_20260324_1247.md",
-      "filename": "report_reanalyze_existing_20260324_1247.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Reanalysis of Existing Research Results",
-      "date": "2026-03-24T12:47:28.907270",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_reanalyze_existing_20260324_1247.json",
-      "filename": "report_reanalyze_existing_20260324_1247.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "CRSP/Compustat Data Deep Exploration",
-      "date": "2026-03-24T12:47:26.998567",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_data_analysis_20260324_1247.md",
-      "filename": "report_crsp_data_analysis_20260324_1247.md"
     }
   ]
 }
