@@ -1,10 +1,172 @@
 {
-  "updated": "2026-03-25T12:00:16.596084",
-  "reports_count": 235,
-  "finance_count": 159,
-  "bio_count": 46,
-  "figures_count": 108,
+  "updated": "2026-03-25T13:00:17.456212",
+  "reports_count": 252,
+  "finance_count": 168,
+  "bio_count": 50,
+  "figures_count": 111,
   "reports": [
+    {
+      "source": "research1",
+      "category": "equity",
+      "title": "CRSP/Compustat Data Deep Exploration",
+      "date": "2026-03-25T12:49:04.790684",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_data_analysis_20260325_1249.md",
+      "filename": "report_crsp_data_analysis_20260325_1249.md"
+    },
+    {
+      "source": "research1",
+      "category": "equity",
+      "title": "CRSP/Compustat Data Deep Exploration",
+      "date": "2026-03-25T12:49:04.790684",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_data_analysis_20260325_1249.json",
+      "filename": "report_crsp_data_analysis_20260325_1249.json"
+    },
+    {
+      "source": "research1",
+      "category": "equity",
+      "title": "DTAQ Market Depth Evolution (2016-2021) \u2014 Deep Analysis",
+      "date": "2026-03-25T12:49:04.545617",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_dtaq_depth_evolution_v2_20260325_1249.md",
+      "filename": "report_dtaq_depth_evolution_v2_20260325_1249.md"
+    },
+    {
+      "source": "research1",
+      "category": "equity",
+      "title": "DTAQ Market Depth Evolution (2016-2021) \u2014 Deep Analysis",
+      "date": "2026-03-25T12:49:04.545617",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_dtaq_depth_evolution_v2_20260325_1249.json",
+      "filename": "report_dtaq_depth_evolution_v2_20260325_1249.json"
+    },
+    {
+      "source": "biohpc",
+      "category": "drug_discovery",
+      "title": "T2D Drug Repurposing \u2014 Deep Analysis",
+      "date": "2026-03-25T12:48:53.063452",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_t2d_drug_repurposing_deep_20260325_1248.md",
+      "filename": "report_t2d_drug_repurposing_deep_20260325_1248.md"
+    },
+    {
+      "source": "biohpc",
+      "category": "drug_discovery",
+      "title": "T2D Drug Repurposing \u2014 Deep Analysis",
+      "date": "2026-03-25T12:48:53.063452",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_t2d_drug_repurposing_deep_20260325_1248.json",
+      "filename": "report_t2d_drug_repurposing_deep_20260325_1248.json"
+    },
+    {
+      "source": "biohpc",
+      "category": "md_simulation",
+      "title": "Insulin Monomer 410ns Deep Analysis",
+      "date": "2026-03-25T12:48:52.894205",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_deep_20260325_1248.md",
+      "filename": "report_insulin_monomer_deep_20260325_1248.md"
+    },
+    {
+      "source": "biohpc",
+      "category": "md_simulation",
+      "title": "Insulin Monomer 410ns Deep Analysis",
+      "date": "2026-03-25T12:48:52.894205",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_deep_20260325_1248.json",
+      "filename": "report_insulin_monomer_deep_20260325_1248.json"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Kaiko Multi-Exchange Liquidity Comparison",
+      "date": "2026-03-25 13:00",
+      "score": 1,
+      "thinking_tokens": 1789,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Kaiko_Multi-Exchange_Liquidity_20260325_1257.md",
+      "filename": "report_Kaiko_Multi-Exchange_Liquidity_20260325_1257.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "Crypto-Equity Correlation Regime Changes",
+      "date": "2026-03-25 12:53",
+      "score": 3,
+      "thinking_tokens": 1614,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Crypto-Equity_Correlation_Regi_20260325_1249.md",
+      "filename": "report_Crypto-Equity_Correlation_Regi_20260325_1249.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "US Equity Intraday Volatility U-Shape (TAQ)",
+      "date": "2026-03-25 12:45",
+      "score": 0,
+      "thinking_tokens": 1587,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260325_1242.md",
+      "filename": "report_US_Equity_Intraday_Volatility__20260325_1242.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "cross_market",
+      "title": "Cross-Exchange BTC Price Dispersion",
+      "date": "2026-03-25 12:38",
+      "score": 2,
+      "thinking_tokens": 1585,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260325_1236.md",
+      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260325_1236.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Binance BTC-USDT Order Book Asymmetry",
+      "date": "2026-03-25 12:32",
+      "score": 2,
+      "thinking_tokens": 1875,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Binance_BTC-USDT_Order_Book_As_20260325_1229.md",
+      "filename": "report_Binance_BTC-USDT_Order_Book_As_20260325_1229.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Kaiko Multi-Exchange Liquidity Comparison",
+      "date": "2026-03-25 12:20",
+      "score": 5,
+      "thinking_tokens": 1934,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Kaiko_Multi-Exchange_Liquidity_20260325_1217.md",
+      "filename": "report_Kaiko_Multi-Exchange_Liquidity_20260325_1217.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "Crypto-Equity Correlation Regime Changes",
+      "date": "2026-03-25 12:13",
+      "score": 5,
+      "thinking_tokens": 1916,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Crypto-Equity_Correlation_Regi_20260325_1211.md",
+      "filename": "report_Crypto-Equity_Correlation_Regi_20260325_1211.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "US Equity Intraday Volatility U-Shape (TAQ)",
+      "date": "2026-03-25 12:07",
+      "score": 5,
+      "thinking_tokens": 1662,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260325_1204.md",
+      "filename": "report_US_Equity_Intraday_Volatility__20260325_1204.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "cross_market",
+      "title": "Cross-Exchange BTC Price Dispersion",
+      "date": "2026-03-25 12:00",
+      "score": 1,
+      "thinking_tokens": 1797,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260325_1158.md",
+      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260325_1158.md"
+    },
     {
       "source": "taqclaw",
       "category": "crypto",
@@ -817,159 +979,6 @@
       "score": 0,
       "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_dtaq_flash_crash_20260324_1227.md",
       "filename": "report_dtaq_flash_crash_20260324_1227.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Flash Crash Pattern Detection",
-      "date": "2026-03-24T12:27:59.746165",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_dtaq_flash_crash_20260324_1227.json",
-      "filename": "report_dtaq_flash_crash_20260324_1227.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Post-Earnings Announcement Drift",
-      "date": "2026-03-24T12:27:59.745377",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_earnings_surprise_20260324_1227.md",
-      "filename": "report_earnings_surprise_20260324_1227.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Post-Earnings Announcement Drift",
-      "date": "2026-03-24T12:27:59.745377",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_earnings_surprise_20260324_1227.json",
-      "filename": "report_earnings_surprise_20260324_1227.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Order Book Depth Evolution (2004-2021)",
-      "date": "2026-03-24T12:27:59.744039",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_dtaq_depth_evolution_20260324_1227.md",
-      "filename": "report_dtaq_depth_evolution_20260324_1227.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Order Book Depth Evolution (2004-2021)",
-      "date": "2026-03-24T12:27:59.744039",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_dtaq_depth_evolution_20260324_1227.json",
-      "filename": "report_dtaq_depth_evolution_20260324_1227.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "CRSP Momentum & Reversal Screen",
-      "date": "2026-03-24T12:27:59.123434",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_momentum_screen_20260324_1227.md",
-      "filename": "report_crsp_momentum_screen_20260324_1227.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "CRSP Momentum & Reversal Screen",
-      "date": "2026-03-24T12:27:59.123434",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_momentum_screen_20260324_1227.json",
-      "filename": "report_crsp_momentum_screen_20260324_1227.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Volatility Signature Plot",
-      "date": "2026-03-24T12:27:59.122387",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_taq_volatility_signature_20260324_1227.md",
-      "filename": "report_taq_volatility_signature_20260324_1227.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Volatility Signature Plot",
-      "date": "2026-03-24T12:27:59.122387",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_taq_volatility_signature_20260324_1227.json",
-      "filename": "report_taq_volatility_signature_20260324_1227.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Price Impact Analysis",
-      "date": "2026-03-24T12:27:59.121665",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_taq_price_impact_20260324_1227.md",
-      "filename": "report_taq_price_impact_20260324_1227.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Price Impact Analysis",
-      "date": "2026-03-24T12:27:59.121665",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_taq_price_impact_20260324_1227.json",
-      "filename": "report_taq_price_impact_20260324_1227.json"
-    },
-    {
-      "source": "research1",
-      "category": "cross_market",
-      "title": "Cross-Asset Signal Generation",
-      "date": "2026-03-24T12:27:59.120670",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_cross_asset_signal_20260324_1227.md",
-      "filename": "report_cross_asset_signal_20260324_1227.md"
-    },
-    {
-      "source": "research1",
-      "category": "cross_market",
-      "title": "Cross-Asset Signal Generation",
-      "date": "2026-03-24T12:27:59.120670",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_cross_asset_signal_20260324_1227.json",
-      "filename": "report_cross_asset_signal_20260324_1227.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Crypto-Related Equity Analysis",
-      "date": "2026-03-24T12:27:59.119881",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_crypto_stocks_20260324_1227.md",
-      "filename": "report_crsp_crypto_stocks_20260324_1227.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Crypto-Related Equity Analysis",
-      "date": "2026-03-24T12:27:59.119881",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_crypto_stocks_20260324_1227.json",
-      "filename": "report_crsp_crypto_stocks_20260324_1227.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Spread Decomposition Analysis",
-      "date": "2026-03-24T12:27:59.116936",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_taq_spread_decomposition_20260324_1227.md",
-      "filename": "report_taq_spread_decomposition_20260324_1227.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Spread Decomposition Analysis",
-      "date": "2026-03-24T12:27:59.116936",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_taq_spread_decomposition_20260324_1227.json",
-      "filename": "report_taq_spread_decomposition_20260324_1227.json"
     }
   ]
 }
