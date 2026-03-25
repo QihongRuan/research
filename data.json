@@ -1,10 +1,60 @@
 {
-  "updated": "2026-03-25T10:00:14.142429",
-  "reports_count": 223,
-  "finance_count": 147,
+  "updated": "2026-03-25T11:00:11.325929",
+  "reports_count": 228,
+  "finance_count": 152,
   "bio_count": 46,
   "figures_count": 108,
   "reports": [
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "Crypto-Equity Correlation Regime Changes",
+      "date": "2026-03-25 10:55",
+      "score": 3,
+      "thinking_tokens": 2086,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Crypto-Equity_Correlation_Regi_20260325_1052.md",
+      "filename": "report_Crypto-Equity_Correlation_Regi_20260325_1052.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "US Equity Intraday Volatility U-Shape (TAQ)",
+      "date": "2026-03-25 10:48",
+      "score": 8,
+      "thinking_tokens": 1535,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260325_1042.md",
+      "filename": "report_US_Equity_Intraday_Volatility__20260325_1042.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "cross_market",
+      "title": "Cross-Exchange BTC Price Dispersion",
+      "date": "2026-03-25 10:38",
+      "score": 8,
+      "thinking_tokens": 1928,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260325_1018.md",
+      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260325_1018.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Binance BTC-USDT Order Book Asymmetry",
+      "date": "2026-03-25 10:14",
+      "score": 5,
+      "thinking_tokens": 1400,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Binance_BTC-USDT_Order_Book_As_20260325_1011.md",
+      "filename": "report_Binance_BTC-USDT_Order_Book_As_20260325_1011.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Kaiko Multi-Exchange Liquidity Comparison",
+      "date": "2026-03-25 10:02",
+      "score": 5,
+      "thinking_tokens": 1777,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Kaiko_Multi-Exchange_Liquidity_20260325_0956.md",
+      "filename": "report_Kaiko_Multi-Exchange_Liquidity_20260325_0956.md"
+    },
     {
       "source": "taqclaw",
       "category": "equity",
@@ -913,51 +963,6 @@
       "score": 0,
       "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_chembl_screening_20260324_1215.md",
       "filename": "report_chembl_screening_20260324_1215.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "drug_discovery",
-      "title": "ChEMBL Compound Screening",
-      "date": "2026-03-24T12:15:22.227654",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_chembl_screening_20260324_1215.json",
-      "filename": "report_chembl_screening_20260324_1215.json"
-    },
-    {
-      "source": "biohpc",
-      "category": "structural_biology",
-      "title": "Binding Site Characterization",
-      "date": "2026-03-24T12:15:22.194790",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_binding_site_analysis_20260324_1215.md",
-      "filename": "report_binding_site_analysis_20260324_1215.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "structural_biology",
-      "title": "Binding Site Characterization",
-      "date": "2026-03-24T12:15:22.194790",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_binding_site_analysis_20260324_1215.json",
-      "filename": "report_binding_site_analysis_20260324_1215.json"
-    },
-    {
-      "source": "biohpc",
-      "category": "structural_biology",
-      "title": "ColabFold Structure Analysis",
-      "date": "2026-03-24T12:15:22.162376",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_colabfold_analysis_20260324_1215.md",
-      "filename": "report_colabfold_analysis_20260324_1215.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "structural_biology",
-      "title": "ColabFold Structure Analysis",
-      "date": "2026-03-24T12:15:22.162376",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_colabfold_analysis_20260324_1215.json",
-      "filename": "report_colabfold_analysis_20260324_1215.json"
     }
   ]
 }
