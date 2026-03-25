@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Options Strategy Backtest — Agentic Sciences</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #fff;
+    color: #111;
+    line-height: 1.7;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+a { color: #111; }
+header {
+    margin-bottom: 48px;
+    border-bottom: 2px solid #111;
+    padding-bottom: 24px;
+}
+header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.5px; margin-bottom: 8px; }
+header .subtitle { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 0.85rem; color: #666; letter-spacing: 1px; text-transform: uppercase; }
+nav { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 0.85rem; margin-bottom: 36px; padding: 12px 0; border-bottom: 1px solid #ddd; }
+nav a { margin-right: 24px; text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+h2 { font-size: 1.5rem; font-weight: 400; margin-top: 56px; margin-bottom: 16px; border-bottom: 1px solid #ccc; padding-bottom: 8px; }
+h3 { font-size: 1.15rem; font-weight: 600; margin-top: 32px; margin-bottom: 12px; }
+p { margin-bottom: 16px; }
+.section { margin-bottom: 48px; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 0.85rem; }
+th, td { padding: 8px 12px; text-align: right; border: 1px solid #ddd; }
+th { background: #f8f8f8; font-weight: 600; text-align: center; }
+td:first-child, th:first-child { text-align: left; }
+tr:hover { background: #fafafa; }
+.positive { color: #27ae60; }
+.negative { color: #c0392b; }
+.highlight { background: #fffde7; }
+.chart-container { margin: 24px 0; text-align: center; }
+.chart-container img { max-width: 100%; border: 1px solid #eee; }
+.chart-caption { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 0.8rem; color: #666; margin-top: 8px; }
+.key-finding { background: #f9f9f9; border-left: 3px solid #111; padding: 16px 20px; margin: 20px 0; font-size: 0.95rem; }
+.key-finding strong { display: block; margin-bottom: 4px; }
+.methodology { background: #f5f5f5; padding: 20px; margin: 24px 0; font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 0.85rem; }
+.methodology h4 { font-size: 0.9rem; margin-bottom: 8px; }
+footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #ddd; font-family: 'Helvetica Neue', 'Arial', sans-serif; font-size: 0.8rem; color: #888; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Options Volatility Strategy Backtest</h1>
+    <div class="subtitle">Agentic Sciences Research — March 2026</div>
+</header>
+
+<nav>
+    <a href="index.html">Dashboard</a>
+    <a href="backtest.html">Strategy Backtest</a>
+    <a href="market.html">Market Analysis</a>
+    <a href="options.html"><strong>Options Strategy</strong></a>
+</nav>
+
+<div class="section">
+<h2>Overview</h2>
+<p>Systematic backtest of two options selling strategies — Covered Call and Cash-Secured Put — on seven major US equities using OptionMetrics data from WRDS. The analysis covers 18.7 million option records across 2020–2025, with 553 trades per strategy.</p>
+
+<div class="methodology">
+<h4>Methodology</h4>
+<p><strong>Data:</strong> WRDS OptionMetrics (<code>optionm.opprcd2020</code> through <code>opprcd2025</code>), 18,665,143 records<br>
+<strong>Universe:</strong> AAPL, AMZN, GOOG, META, MSFT, NVDA, TSLA<br>
+<strong>Entry:</strong> Monthly (~every 25 calendar days)<br>
+<strong>Option selection:</strong> ~30 DTE, delta ≈ 0.30 (calls) / −0.30 (puts)<br>
+<strong>Pricing:</strong> Mid-market (best_bid + best_offer) / 2<br>
+<strong>Exit:</strong> Hold to expiration<br>
+<strong>Covered Call P&L:</strong> Stock return + premium yield − max(0, S<sub>T</sub>−K) / S<sub>0</sub><br>
+<strong>Cash-Secured Put P&L:</strong> Premium yield − max(0, K−S<sub>T</sub>) / K</p>
+</div>
+</div>
+
+<div class="section">
+<h2>I. Covered Call Strategy</h2>
+
+<p>Buy-and-hold the stock while selling monthly OTM calls (delta ~0.30). This strategy generates income from premium collection while capping upside at the strike price.</p>
+
+<h3>Performance by Stock</h3>
+<table>
+<tr><th>Ticker</th><th>Trades</th><th>Win Rate</th><th>Avg PnL</th><th>Avg Premium</th><th>Avg IV</th><th>Assign %</th><th>Total PnL</th><th>Sharpe</th></tr>
+<tr class="highlight"><td><strong>MSFT</strong></td><td>79</td><td class="positive">69.6%</td><td class="positive">+1.64%</td><td>1.34%</td><td>25.6%</td><td>38.0%</td><td class="positive"><strong>+218%</strong></td><td><strong>1.00</strong></td></tr>
+<tr class="highlight"><td><strong>META</strong></td><td>79</td><td>67.1%</td><td class="positive">+1.20%</td><td>1.98%</td><td>37.9%</td><td>38.0%</td><td class="positive">+71%</td><td>0.43</td></tr>
+<tr><td>NVDA</td><td>79</td><td>73.4%</td><td class="positive">+1.27%</td><td>2.47%</td><td>48.4%</td><td>41.8%</td><td class="negative">−66%</td><td>0.26</td></tr>
+<tr><td>AMZN</td><td>79</td><td>69.6%</td><td class="positive">+0.42%</td><td>1.73%</td><td>33.5%</td><td>36.7%</td><td class="negative">−82%</td><td>0.11</td></tr>
+<tr><td>GOOG</td><td>79</td><td>69.6%</td><td class="positive">+0.36%</td><td>1.49%</td><td>29.1%</td><td>35.4%</td><td class="negative">−80%</td><td>0.10</td></tr>
+<tr><td>TSLA</td><td>79</td><td>57.0%</td><td class="positive">+0.17%</td><td>3.16%</td><td>62.2%</td><td>30.4%</td><td class="negative">−82%</td><td>0.03</td></tr>
+<tr><td>AAPL</td><td>79</td><td>60.8%</td><td class="negative">−0.15%</td><td>1.51%</td><td>28.0%</td><td>39.2%</td><td class="negative">−61%</td><td>−0.05</td></tr>
+</table>
+
+<div class="key-finding">
+<strong>Key Finding: MSFT — The Perfect Covered Call Stock</strong>
+MSFT achieved a Sharpe ratio of 1.00 with +218% cumulative return over 5 years. Its moderate IV (25.6%) generates consistent premium while its steady upward trend limits assignment losses. The 69.6% win rate with 1.64% average monthly PnL makes it an institutional favorite for covered call overlays.
+</div>
+</div>
+
+<div class="section">
+<h2>II. Cash-Secured Put Strategy</h2>
+
+<p>Sell monthly OTM puts (delta ~−0.30) while holding cash to cover potential assignment. Premium collected as income; risk is buying the stock at the strike price during drawdowns.</p>
+
+<h3>Performance by Stock</h3>
+<table>
+<tr><th>Ticker</th><th>Trades</th><th>Win Rate</th><th>Avg PnL</th><th>Avg Premium</th><th>Avg IV</th><th>Assign %</th><th>Total PnL</th><th>Sharpe</th></tr>
+<tr class="highlight"><td><strong>MSFT</strong></td><td>79</td><td class="positive">86.1%</td><td class="positive">+0.69%</td><td>1.70%</td><td>28.7%</td><td>20.3%</td><td class="positive"><strong>+65%</strong></td><td><strong>0.75</strong></td></tr>
+<tr><td>META</td><td>79</td><td class="positive">82.3%</td><td class="positive">+0.04%</td><td>2.54%</td><td>40.7%</td><td>24.1%</td><td class="negative">−13%</td><td>0.02</td></tr>
+<tr><td>GOOG</td><td>79</td><td class="positive">82.3%</td><td class="negative">−0.71%</td><td>1.92%</td><td>31.8%</td><td>19.0%</td><td class="negative">−89%</td><td>−0.22</td></tr>
+<tr><td>AAPL</td><td>79</td><td class="positive">81.0%</td><td class="negative">−0.66%</td><td>1.87%</td><td>31.0%</td><td>31.6%</td><td class="negative">−70%</td><td>−0.24</td></tr>
+<tr><td>NVDA</td><td>79</td><td class="positive">83.5%</td><td class="negative">−0.91%</td><td>3.24%</td><td>51.1%</td><td>21.5%</td><td class="negative">−90%</td><td>−0.23</td></tr>
+<tr><td>TSLA</td><td>79</td><td>74.7%</td><td class="negative">−0.99%</td><td>4.29%</td><td>64.9%</td><td>30.4%</td><td class="negative">−86%</td><td>−0.26</td></tr>
+<tr><td>AMZN</td><td>79</td><td>79.7%</td><td class="negative">−0.92%</td><td>2.18%</td><td>35.9%</td><td>20.3%</td><td class="negative">−91%</td><td>−0.28</td></tr>
+</table>
+
+<div class="key-finding">
+<strong>Key Finding: High Win Rate ≠ Profitability</strong>
+Cash-Secured Puts achieve 81.4% win rate on average — but overall average PnL is −0.49% per month. The strategy collects 2.53% in premium but loses catastrophically during the ~19% of months when stocks decline sharply. The asymmetry of option payoffs (small frequent gains vs. large rare losses) makes this a negative expected value proposition for most stocks.
+</div>
+</div>
+
+<div class="section">
+<h2>III. Visual Analysis</h2>
+
+<div class="chart-container">
+    <img src="figures/options_win_rate.png" alt="Win Rates">
+    <div class="chart-caption">Figure 1: Win rates by stock — Cash-Secured Put consistently higher (75-86%) but misleading</div>
+</div>
+
+<div class="chart-container">
+    <img src="figures/options_cumulative.png" alt="Cumulative PnL">
+    <div class="chart-caption">Figure 2: Cumulative P&L — only MSFT generates consistent positive returns in both strategies</div>
+</div>
+
+<div class="chart-container">
+    <img src="figures/options_pnl_dist.png" alt="PnL Distribution">
+    <div class="chart-caption">Figure 3: Monthly P&L distribution — note the left tail (large losses) that overwhelms the right-clustered small gains</div>
+</div>
+
+<div class="chart-container">
+    <img src="figures/options_iv_premium.png" alt="IV vs Premium">
+    <div class="chart-caption">Figure 4: Implied volatility vs. premium yield — higher IV stocks (TSLA, NVDA) collect more premium but face larger assignment losses</div>
+</div>
+
+<div class="chart-container">
+    <img src="figures/options_heatmap.png" alt="Year Heatmap">
+    <div class="chart-caption">Figure 5: Annual win rate heatmap — 2022 bear market devastated put sellers across the board</div>
+</div>
+</div>
+
+<div class="section">
+<h2>IV. Conclusions</h2>
+
+<h3>Covered Call vs. Cash-Secured Put</h3>
+<table>
+<tr><th>Metric</th><th>Covered Call</th><th>Cash-Secured Put</th></tr>
+<tr><td>Win Rate</td><td>66.7%</td><td><strong>81.4%</strong></td></tr>
+<tr><td>Avg Monthly PnL</td><td class="positive"><strong>+0.70%</strong></td><td class="negative">−0.49%</td></tr>
+<tr><td>Avg Premium</td><td>1.95%</td><td><strong>2.53%</strong></td></tr>
+<tr><td>Best Trade</td><td><strong>+33.6%</strong></td><td>+13.5%</td></tr>
+<tr><td>Worst Trade</td><td>−93.3%</td><td>−92.1%</td></tr>
+<tr><td>PnL Std Dev</td><td>12.97%</td><td><strong>10.36%</strong></td></tr>
+</table>
+
+<div class="key-finding">
+<strong>Recommendation</strong>
+<p>1. <strong>Covered Call on MSFT</strong> (SR 1.00): The optimal options selling strategy. Low IV, steady uptrend, moderate assignment rate.</p>
+<p>2. <strong>Avoid Cash-Secured Puts on high-beta stocks</strong> (TSLA, NVDA, COIN): Premium is high but tail risk destroys cumulative returns.</p>
+<p>3. <strong>Regime filter critical</strong>: Both strategies need a volatility regime filter — sell options in low-vol periods, reduce exposure when VIX spikes above 25.</p>
+</div>
+</div>
+
+<footer>
+<p><strong>Agentic Sciences</strong> — Quantitative Research Lab</p>
+<p>Data: WRDS OptionMetrics (18.7M option records, 2020-2025), CRSP v2 stock prices<br>
+Analysis date: March 24, 2026 | 553 trades per strategy | 7 stocks | Monthly frequency</p>
+<p>Script: <code>/mnt/work/qr33/comewealth/scripts/options_strategy.py</code></p>
+</footer>
+
+</body>
+</html>

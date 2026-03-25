@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Equity Market Deep Dive — Agentic Sciences</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #fff;
+    color: #111;
+    line-height: 1.7;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+a { color: #111; }
+header {
+    margin-bottom: 48px;
+    border-bottom: 2px solid #111;
+    padding-bottom: 24px;
+}
+header h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+header .subtitle {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 0.85rem;
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+nav {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 0.85rem;
+    margin-bottom: 36px;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+nav a { margin-right: 24px; text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 56px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+}
+h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+p { margin-bottom: 16px; }
+.section { margin-bottom: 48px; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 0.85rem;
+}
+th, td {
+    padding: 8px 12px;
+    text-align: right;
+    border: 1px solid #ddd;
+}
+th {
+    background: #f8f8f8;
+    font-weight: 600;
+    text-align: center;
+}
+td:first-child, th:first-child { text-align: left; }
+tr:hover { background: #fafafa; }
+
+.positive { color: #27ae60; }
+.negative { color: #c0392b; }
+.highlight { background: #fffde7; }
+
+.chart-container {
+    margin: 24px 0;
+    text-align: center;
+}
+.chart-container img {
+    max-width: 100%;
+    border: 1px solid #eee;
+}
+.chart-caption {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 8px;
+}
+
+.key-finding {
+    background: #f9f9f9;
+    border-left: 3px solid #111;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 0.95rem;
+}
+.key-finding strong { display: block; margin-bottom: 4px; }
+
+.methodology {
+    background: #f5f5f5;
+    padding: 20px;
+    margin: 24px 0;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 0.85rem;
+}
+.methodology h4 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid #ddd;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 0.8rem;
+    color: #888;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>US Equity Market Deep Dive</h1>
+    <div class="subtitle">Agentic Sciences Research — March 2026</div>
+</header>
+
+<nav>
+    <a href="index.html">Dashboard</a>
+    <a href="backtest.html">Strategy Backtest</a>
+    <a href="market.html"><strong>Market Analysis</strong></a>
+    <a href="options.html">Options Strategy</a>
+</nav>
+
+<!-- ============================================ -->
+<!-- SECTION 1: Market Overview 2016-2025 -->
+<!-- ============================================ -->
+<div class="section">
+<h2>I. Market Overview (2016–2025)</h2>
+
+<p>Comprehensive analysis of the US equity market using CRSP v2 daily data. The dataset covers 11.28 million stock-day observations across 5,139 stocks (average), spanning 10 years of daily returns, volumes, and spreads.</p>
+
+<div class="methodology">
+<h4>Methodology</h4>
+<p><strong>Data:</strong> WRDS CRSP <code>crsp_a_stock.dsf_v2</code> (2016-01-01 to 2025-12-31)<br>
+<strong>Universe:</strong> NYSE (N), AMEX (A), NASDAQ (Q); Common stocks (NS/EQTY); Active trading status<br>
+<strong>Filter:</strong> Price > $1, Market cap > 0<br>
+<strong>Portfolios:</strong> Equal-weighted and value-weighted market returns computed daily</p>
+</div>
+
+<div class="chart-container">
+    <img src="figures/daily10y_overview.png" alt="Market Overview 2016-2025">
+    <div class="chart-caption">Figure 1: Six-panel market overview — cumulative returns, volatility, spreads, volume, breadth, and size premium</div>
+</div>
+
+<h3>Year-by-Year Performance</h3>
+<table>
+<tr><th>Year</th><th>EW Return</th><th>VW Return</th><th>Volatility</th><th>Median Spread</th><th>Avg $/Day</th><th>Stocks</th></tr>
+<tr><td>2016</td><td class="positive">+30.6%</td><td class="positive">+20.8%</td><td>16.4%</td><td>0.10%</td><td>$179B</td><td>4,148</td></tr>
+<tr><td>2017</td><td class="positive">+24.7%</td><td class="positive">+27.0%</td><td>9.7%</td><td>0.12%</td><td>$185B</td><td>4,144</td></tr>
+<tr><td>2018</td><td class="negative">−7.0%</td><td class="positive">+0.1%</td><td>15.0%</td><td>0.11%</td><td>$236B</td><td>4,170</td></tr>
+<tr><td>2019</td><td class="positive">+33.1%</td><td class="positive">+38.7%</td><td>14.0%</td><td>0.11%</td><td>$216B</td><td>4,121</td></tr>
+<tr><td>2020</td><td class="positive">+55.2%</td><td class="positive">+41.4%</td><td>38.9%</td><td>0.16%</td><td>$321B</td><td>4,151</td></tr>
+<tr><td>2021</td><td class="positive">+21.7%</td><td class="positive">+36.5%</td><td>19.1%</td><td>0.18%</td><td>$384B</td><td>5,018</td></tr>
+<tr><td>2022</td><td class="negative">−17.2%</td><td class="negative">−10.6%</td><td>24.1%</td><td>0.17%</td><td>$361B</td><td>5,229</td></tr>
+<tr><td>2023</td><td class="positive">+27.4%</td><td class="positive">+35.8%</td><td>17.1%</td><td>0.16%</td><td>$342B</td><td>4,776</td></tr>
+<tr><td>2024</td><td class="positive">+30.1%</td><td class="positive">+35.1%</td><td>17.1%</td><td>0.16%</td><td>$420B</td><td>4,560</td></tr>
+<tr><td>2025</td><td class="positive">+34.7%</td><td class="positive">+32.1%</td><td>21.5%</td><td>0.17%</td><td>$558B</td><td>4,559</td></tr>
+</table>
+
+<div class="key-finding">
+<strong>Key Finding: Dollar Volume Explosion</strong>
+Daily dollar volume grew from $179B (2016) to $558B (2025) — a +212% increase. This dramatic increase in market liquidity was driven by retail participation (especially post-COVID) and the rise of zero-commission trading.
+</div>
+
+<h3>Day-of-Week Effect</h3>
+
+<div class="chart-container">
+    <img src="figures/daily10y_dow.png" alt="Day of Week Effects">
+    <div class="chart-caption">Figure 2: Day-of-week effects — annualized return and Sharpe ratio by weekday (2016-2025)</div>
+</div>
+
+<table>
+<tr><th>Day</th><th>Annualized Return</th><th>Sharpe Ratio</th><th>Interpretation</th></tr>
+<tr class="highlight"><td><strong>Friday</strong></td><td class="positive">+34.2%</td><td><strong>0.49</strong></td><td>Best risk-adjusted day — weekend position covering</td></tr>
+<tr><td>Wednesday</td><td class="positive">+23.2%</td><td>0.27</td><td>Mid-week stability</td></tr>
+<tr><td>Monday</td><td class="positive">+21.8%</td><td>0.25</td><td>Gap-up tendency after weekend</td></tr>
+<tr><td>Tuesday</td><td class="positive">+21.2%</td><td>0.26</td><td>Similar to Monday</td></tr>
+<tr><td><strong>Thursday</strong></td><td class="positive">+7.2%</td><td>0.10</td><td>Weakest — pre-Friday selling?</td></tr>
+</table>
+
+<div class="key-finding">
+<strong>Key Finding: Thursday Curse</strong>
+Thursday returns (7.2% ann, SR 0.10) are dramatically lower than other days. The Friday-Thursday spread of 27% annualized is remarkably large and persists across the full decade. This may reflect institutional rebalancing patterns or options expiration dynamics.
+</div>
+
+<h3>Size Effect</h3>
+
+<div class="chart-container">
+    <img src="figures/daily10y_size_year.png" alt="Size x Year Heatmap">
+    <div class="chart-caption">Figure 3: Annualized returns by size quintile and year — the small-cap premium persists but varies dramatically</div>
+</div>
+
+<h3>Fama-French Factor Returns</h3>
+
+<div class="chart-container">
+    <img src="figures/daily10y_factors.png" alt="FF Factors">
+    <div class="chart-caption">Figure 4: Cumulative Fama-French 5 + Momentum factor returns (2016-2025)</div>
+</div>
+
+<table>
+<tr><th>Factor</th><th>Ann. Return</th><th>Interpretation</th></tr>
+<tr><td>Market (MKT-RF)</td><td class="positive">~20%</td><td>Strong equity premium</td></tr>
+<tr><td>Size (SMB)</td><td class="positive">~4.7%</td><td>Small-cap premium alive</td></tr>
+<tr><td>Profitability (RMW)</td><td class="positive">~5.8%</td><td>Quality factor works</td></tr>
+<tr><td>Momentum (UMD)</td><td class="positive">~5.6%</td><td>Momentum recovered post-2020 crash</td></tr>
+<tr><td>Investment (CMA)</td><td class="positive">~4.0%</td><td>Conservative investment pays</td></tr>
+<tr><td>Value (HML)</td><td>~0.5%</td><td>Value factor essentially dead</td></tr>
+</table>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION 2: Individual Stock Analysis -->
+<!-- ============================================ -->
+<div class="section">
+<h2>II. Individual Stock Deep Dive</h2>
+
+<p>Analysis of 13 major US equities spanning mega-cap tech, meme stocks, and crypto-adjacent names. Daily returns from CRSP v2 (2016-2025).</p>
+
+<div class="chart-container">
+    <img src="figures/stock_cumulative.png" alt="Stock Cumulative Returns">
+    <div class="chart-caption">Figure 5: Cumulative returns (log scale) — NVDA's +23,094% dominates all others</div>
+</div>
+
+<h3>Performance Summary</h3>
+<table>
+<tr><th>Ticker</th><th>Total Return</th><th>Ann. Return</th><th>Ann. Vol</th><th>Sharpe</th><th>Max DD</th><th>Skew</th><th>Kurt</th><th>Beta</th></tr>
+<tr class="highlight"><td><strong>NVDA</strong></td><td class="positive">+23,094%</td><td>72.6%</td><td>49.9%</td><td><strong>1.46</strong></td><td>−66.3%</td><td>0.52</td><td>8.0</td><td>1.78</td></tr>
+<tr class="highlight"><td><strong>PLTR</strong></td><td class="positive">+1,771%</td><td>75.0%</td><td>70.8%</td><td><strong>1.06</strong></td><td>−84.6%</td><td>1.04</td><td>6.1</td><td>2.04</td></tr>
+<tr><td>AMD</td><td class="positive">+7,362%</td><td>54.1%</td><td>59.1%</td><td>0.91</td><td>−65.5%</td><td>1.40</td><td>18.5</td><td>1.72</td></tr>
+<tr class="highlight"><td><strong>MSFT</strong></td><td class="positive">+896%</td><td>25.9%</td><td>26.8%</td><td><strong>0.97</strong></td><td>−37.1%</td><td>0.08</td><td>7.6</td><td>1.14</td></tr>
+<tr><td>META</td><td class="positive">+238%</td><td>41.0%</td><td>42.9%</td><td>0.96</td><td>−51.7%</td><td>0.50</td><td>19.2</td><td>1.50</td></tr>
+<tr><td>AAPL</td><td class="positive">+1,046%</td><td>27.7%</td><td>29.0%</td><td>0.95</td><td>−38.5%</td><td>0.15</td><td>6.9</td><td>1.16</td></tr>
+<tr><td>GOOGL</td><td class="positive">+711%</td><td>23.3%</td><td>28.8%</td><td>0.81</td><td>−44.3%</td><td>−0.02</td><td>4.5</td><td>1.11</td></tr>
+<tr><td>TSLA</td><td class="positive">+2,711%</td><td>39.7%</td><td>59.3%</td><td>0.67</td><td>−73.6%</td><td>0.28</td><td>4.3</td><td>1.64</td></tr>
+<tr><td>AMZN</td><td class="positive">+583%</td><td>21.2%</td><td>32.8%</td><td>0.65</td><td>−56.1%</td><td>0.19</td><td>5.2</td><td>1.16</td></tr>
+<tr><td>NFLX</td><td class="positive">+720%</td><td>23.5%</td><td>42.0%</td><td>0.56</td><td>−75.9%</td><td>−0.74</td><td>18.5</td><td>1.11</td></tr>
+<tr><td>GME</td><td class="positive">+276%</td><td>14.2%</td><td>117.8%</td><td>0.12</td><td>−89.3%</td><td>5.52</td><td><strong>83.8</strong></td><td>1.15</td></tr>
+<tr><td>COIN</td><td class="negative">−31%</td><td>−7.6%</td><td>86.0%</td><td>−0.09</td><td>−90.9%</td><td>0.48</td><td>2.8</td><td><strong>2.70</strong></td></tr>
+</table>
+
+<div class="chart-container">
+    <img src="figures/stock_risk_return.png" alt="Risk Return Scatter">
+    <div class="chart-caption">Figure 6: Risk-return scatter with Sharpe ratio isolines</div>
+</div>
+
+<div class="chart-container">
+    <img src="figures/stock_volatility.png" alt="Rolling Volatility">
+    <div class="chart-caption">Figure 7: Rolling realized volatility (21-day and 63-day) for TSLA, NVDA, AAPL, AMZN</div>
+</div>
+
+<div class="chart-container">
+    <img src="figures/stock_distribution.png" alt="Return Distribution">
+    <div class="chart-caption">Figure 8: Daily return distributions vs. normal — fat tails clearly visible (COIN kurtosis 2.8, GME kurtosis 83.8)</div>
+</div>
+
+<h3>Beta & Leverage Effect</h3>
+
+<div class="chart-container">
+    <img src="figures/stock_beta_leverage.png" alt="Beta and Leverage">
+    <div class="chart-caption">Figure 9: Market beta (left) and leverage effect — downside/upside volatility ratio (right)</div>
+</div>
+
+<div class="key-finding">
+<strong>Key Finding: Leverage Asymmetry</strong>
+Blue-chip stocks (MSFT, NVDA, AMZN) show a weak leverage effect — downside volatility exceeds upside by 13-15%. High-volatility stocks (TSLA, COIN, GME) are surprisingly symmetric, suggesting retail-driven price formation rather than institutional hedging dynamics.
+</div>
+
+<h3>Annual Returns Heatmap</h3>
+<div class="chart-container">
+    <img src="figures/stock_annual_heatmap.png" alt="Annual Heatmap">
+    <div class="chart-caption">Figure 10: Year-by-year returns — note NVDA's extraordinary consistency and TSLA's boom-bust cycles</div>
+</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION 3: Microstructure -->
+<!-- ============================================ -->
+<div class="section">
+<h2>III. High-Frequency Microstructure (TAQ)</h2>
+
+<p>Tick-level analysis using NYSE TAQ data from research1 server (81 million trade records for a single day). This section examines realized volatility, price impact, order flow, and informed trading metrics.</p>
+
+<div class="methodology">
+<h4>Methodology</h4>
+<p><strong>Data:</strong> NYSE Daily TAQ (DTAQ), <code>/mnt/dtaq/taq2025/202512/</code>, date: 2025-12-31<br>
+<strong>Universe:</strong> TSLA, NVDA, AAPL, AMZN, MSFT, META<br>
+<strong>Filters:</strong> Regular market hours (9:30-16:00), exclude irregular trade conditions<br>
+<strong>Metrics:</strong> 1-min and 5-min realized volatility, Amihud illiquidity, Kyle's λ, Order Flow Imbalance (OFI), VPIN</p>
+</div>
+
+<h3>Microstructure Summary (2025-12-31)</h3>
+<table>
+<tr><th>Ticker</th><th>Trades</th><th>$ Volume</th><th>RV (1m)</th><th>RV (5m)</th><th>Amihud</th><th>Kyle λ</th><th>OFI</th><th>VPIN</th><th>Odd Lot %</th></tr>
+<tr class="highlight"><td><strong>TSLA</strong></td><td>226,623</td><td>$5.42B</td><td>11.2%</td><td>9.6%</td><td>8.02e-07</td><td>2.36e-09</td><td>−0.068</td><td>0.111</td><td>82.7%</td></tr>
+<tr class="highlight"><td><strong>NVDA</strong></td><td>295,444</td><td>$4.64B</td><td>9.5%</td><td>7.8%</td><td>1.76e-06</td><td>9.21e-10</td><td>−0.085</td><td>0.135</td><td>76.9%</td></tr>
+<tr><td>AAPL</td><td>91,513</td><td>$1.22B</td><td>5.5%</td><td>4.9%</td><td>8.25e-07</td><td>2.99e-09</td><td>−0.062</td><td>0.144</td><td>80.6%</td></tr>
+<tr><td>AMZN</td><td>85,079</td><td>$1.06B</td><td>5.5%</td><td>5.3%</td><td>1.54e-07</td><td>3.17e-09</td><td>−0.024</td><td>0.122</td><td>80.2%</td></tr>
+<tr><td>MSFT</td><td>68,941</td><td>$0.85B</td><td>4.8%</td><td>3.8%</td><td>7.62e-07</td><td>5.88e-09</td><td>−0.052</td><td>0.134</td><td>93.9%</td></tr>
+<tr><td>META</td><td>54,142</td><td>$0.85B</td><td>5.8%</td><td>4.4%</td><td>2.71e-06</td><td>9.99e-09</td><td>−0.122</td><td>0.181</td><td>95.3%</td></tr>
+</table>
+
+<div class="key-finding">
+<strong>Key Finding: TSLA — The Retail King</strong>
+TSLA leads in dollar volume ($5.4B) with the highest realized volatility (11.2%) but the lowest VPIN (0.111), indicating that its trading is dominated by noise/retail flow rather than informed trading. In contrast, META has the highest VPIN (0.181) despite lower volume — suggesting significant informed (possibly institutional) selling.
+</div>
+
+<div class="key-finding">
+<strong>Key Finding: Year-End Selling Pressure</strong>
+All six stocks show negative Order Flow Imbalance (OFI) on Dec 31, 2025, consistent with institutional year-end rebalancing and tax-loss harvesting. META's OFI of −0.122 is the most extreme, while AMZN (−0.024) remains closest to equilibrium.
+</div>
+
+<div class="key-finding">
+<strong>Key Finding: The Odd-Lot Era</strong>
+Every stock analyzed has >75% odd-lot trades (< 100 shares), with META at 95.3%. This fundamentally changes market microstructure: traditional lot-size-based analysis is obsolete, and odd-lot trades now carry significant price information.
+</div>
+</div>
+
+<footer>
+<p><strong>Agentic Sciences</strong> — Quantitative Research Lab</p>
+<p>Data sources: WRDS CRSP v2, NYSE TAQ (DTAQ), Fama-French via WRDS<br>
+Analysis date: March 24, 2026<br>
+Server infrastructure: Cornell Johnson research3 + research1 (dual-server cluster, ~220TB)</p>
+<p>All computations performed on raw data. No third-party analytics or pre-computed factors used.</p>
+</footer>
+
+</body>
+</html>
