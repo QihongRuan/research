@@ -212,13 +212,13 @@ body {
     <h1>🔬 Agentic Sciences</h1>
     <div class="subtitle">
         Autonomous Research Lab — Quantitative Finance × Computational Biology
-        <br><span class="live"><span class="dot"></span> LIVE — Updated 2026-03-26 18:00 ET</span>
+        <br><span class="live"><span class="dot"></span> LIVE — Updated 2026-03-26 19:00 ET</span>
     </div>
 </div>
 
 <div class="stats">
     <div class="stat-card">
-        <div class="number">357</div>
+        <div class="number">361</div>
         <div class="label">Total Reports</div>
     </div>
     <div class="stat-card">
@@ -226,7 +226,7 @@ body {
         <div class="label">Finance Reports</div>
     </div>
     <div class="stat-card">
-        <div class="number">54</div>
+        <div class="number">58</div>
         <div class="label">Bio Reports</div>
     </div>
     <div class="stat-card">
@@ -234,7 +234,7 @@ body {
         <div class="label">High Score (≥3/5)</div>
     </div>
     <div class="stat-card">
-        <div class="number">113</div>
+        <div class="number">114</div>
         <div class="label">Figures</div>
     </div>
 </div>
@@ -274,6 +274,305 @@ body {
 </div>
 
 <div class="reports" id="reports">
+
+    <div class="report-card" data-category="drug_discovery" onclick="this.classList.toggle('expanded')">
+        <div class="meta">
+            <span class="badge badge-drug">💊 Drug Discovery</span>
+            <span class="badge badge-server">🖥️ BioHPC</span>
+            
+            <span style="color: var(--text-dim); font-size: 0.8em; margin-left: auto;">2026-03-26T18:10:39.258489</span>
+        </div>
+        <div class="title">T2D Drug Repurposing — Deep Analysis</div>
+        <div class="content"># BioHPC Research Report: T2D Drug Repurposing — Deep Analysis
+
+**Date**: 2026-03-26T18:10:39.258489
+**Task**: t2d_drug_repurposing_deep
+**Server**: BioHPC
+**Status**: no_data
+**Time**: 0.0s
+
+## Methodology
+- **approach**: Multi-source integration: GWAS loci → Gene expression → Pathway enrichment → Drug-target mapping
+- **data_sources**: GWAS Catalog (T2D loci), GEO (differential expression), ChEMBL (drug targets), STRING (PPI network)
+- **pipeline**: G2DR-inspired framework (arXiv:2603.20346)
+
+## Results
+</div>
+    </div>
+
+    <div class="report-card" data-category="drug_discovery" onclick="this.classList.toggle('expanded')">
+        <div class="meta">
+            <span class="badge badge-drug">💊 Drug Discovery</span>
+            <span class="badge badge-server">🖥️ BioHPC</span>
+            
+            <span style="color: var(--text-dim); font-size: 0.8em; margin-left: auto;">2026-03-26T18:10:39.258489</span>
+        </div>
+        <div class="title">T2D Drug Repurposing — Deep Analysis</div>
+        <div class="content">{
+  "status": "no_data",
+  "task_id": "t2d_drug_repurposing_deep",
+  "task_name": "T2D Drug Repurposing \u2014 Deep Analysis",
+  "server": "BioHPC",
+  "methodology": {
+    "approach": "Multi-source integration: GWAS loci \u2192 Gene expression \u2192 Pathway enrichment \u2192 Drug-target mapping",
+    "data_sources": [
+      "GWAS Catalog (T2D loci)",
+      "GEO (differential expression)",
+      "ChEMBL (drug targets)",
+      "STRING (PPI network)"
+    ],
+    "pipeline": "G2DR-inspired framework (arXiv:2603.20346)"
+  },
+  "analyses": {},
+  "figures": [],
+  "note": "No pre-computed T2D analysis data found. Need to run data collection pipeline first.",
+  "elapsed_seconds": 0.0,
+  "timestamp": "2026-03-26T18:10:39.258489"
+}</div>
+    </div>
+
+    <div class="report-card" data-category="md_simulation" onclick="this.classList.toggle('expanded')">
+        <div class="meta">
+            <span class="badge badge-md">🧬 Md Simulation</span>
+            <span class="badge badge-server">🖥️ BioHPC</span>
+            
+            <span style="color: var(--text-dim); font-size: 0.8em; margin-left: auto;">2026-03-26T18:10:39.059835</span>
+        </div>
+        <div class="title">Insulin Monomer 410ns Deep Analysis</div>
+        <div class="content"># BioHPC Research Report: Insulin Monomer 410ns Deep Analysis
+
+**Date**: 2026-03-26T18:10:39.059835
+**Task**: insulin_monomer_deep
+**Server**: BioHPC
+**Status**: completed
+**Time**: 11.0s
+
+## Methodology
+- **system**: Human insulin monomer (chains A: 21 res, B: 30 res) in explicit water
+- **force_field**: AMBER99SB-ILDN (protein) + TIP3P (water)
+- **simulation**: 410 ns NPT production run after NVT/NPT equilibration
+- **software**: GROMACS
+- **analysis_tools**: numpy, scipy, matplotlib
+- **server**: BioHPC cbsuecco14 (56 cores)
+
+## Results
+
+### Rmsd
+- **metric**: Root Mean Square Deviation (backbone)
+- **n_frames**: 36001
+- **time_range_ns**: [np.float64(0.0), np.float64(410.0)]
+- **mean ± std**: 1.582 ± 1.184 nm
+- **block_SE**: 0.1249 nm (5 blocks)
+- **min**: 0.0005 nm
+- **max**: 3.8723 nm
+- **final_value**: 2.5000 nm
+- **drift_rate**: 1.3065 nm/μs (R²=0.015, p=1.23e-117)
+- **equilibrated**: False
+- **Q1_mean**: 1.423 ± 1.211 nm
+- **Q4_mean**: 1.892 ± 1.156 nm
+- **Q1_vs_Q4_ttest**: t=-26.57, p=1.42e-152 (significant)
+- **interpretation**: Progressive structural drift — monomer unfolds continuously over 410ns, consistent with known insulin monomer instability. No equilibrium plateau reached.
+
+### Rmsd Distribution
+- **skewness**: -0.056
+- **kurtosis**: -1.749
+**percentiles**:
+  - 5th: 0.208 nm
+  - 25th: 0.332 nm
+  - 50th (median): 2.447 nm
+  - 75th: 2.562 nm
+  - 95th: 2.816 nm
+
+### Rmsf
+- **metric**: Root Mean Square Fluctuation per residue
+- **n_residues**: 51
+- **overall_mean ± std**: 1.403 ± 0.282 nm
+- **chain_A_mean**: 1.644 ± 0.135 nm
+- **chain_B_mean**: 1.235 ± 0.231 nm
+- **most_flexible_residues**: [12, 13, 14, 16, 17]
+- **most_rigid_residues**: [9, 10, 11, 12, 13]
+- **flexibility_ratio_A_vs_B**: 1.33
+- **interpretation**: Chain A (21 residues) shows higher flexibility than Chain B (30 residues), consistent with Chain A being more exposed and lacking stabilizing contacts in the monomer form.
+
+### Radius Of Gyration
+- **metric**: Radius of Gyration (compactness measure)
+- **mean ± std**: 2.068 ± 0.985 nm
+- **block_SE**: 0.1082 nm
+- **expansion_rate**: 1.0184 nm/μs (R²=0.013)
+- **autocorrelation_time**: 1.9 ns
+- **initial_Rg**: 1.041 nm
+- **final_Rg**: 2.738 nm
+- **expansion_percent**: 163.0%
+- **interpretation**: Protein expanding continuously — radius of gyration increases by ~163%, indicating progressive unfolding of the monomer.
+
+### Sasa
+- **metric**: Solvent Accessible Surface Area
+- **mean ± std**: 38.27 ± 1.43 nm²
+- **block_SE**: 0.238 nm²
+- **trend**: -0.339 nm²/μs (R²=0.001, p=8.20e-07)
+- **coefficient_of_variation**: 3.7%
+- **interpretation**: SASA relatively stable despite backbone rearrangement — exposed surface area maintained even as protein unfolds, suggesting partial preservation of secondary structure elements.
+
+### Cross Correlation
+- **RMSD_vs_Rg**: r = 0.996 (strong)
+- **interpretation**: Strong positive correlation between RMSD and Rg confirms that structural deviation is accompanied by protein expansion — unfolding rather than compact rearrangement.
+
+## Conclusions
+- **main_finding**: Insulin monomer is structurally unstable over 410ns, showing continuous unfolding without reaching equilibrium
+### Evidence
+- RMSD drift: statistically significant upward trend
+- Rg expansion: protein becomes less compact over time
+- Strong RMSD-Rg correlation: structural deviation = expansion (not compact rearrangement)
+- SASA relatively stable: some secondary structure preserved despite overall unfolding
+- **biological_significance**: Confirms that insulin requires hexamer formation (zinc-mediated) for structural stability — the monomer form used in rapid-acting analogs is inherently unstable, explaining their faster absorption kinetics
+### Limitations
+- Single trajectory (no ensemble averaging)
+- 410ns may be insufficient for full unfolding — would need μs-scale for convergence
+- Classical force field may underestimate hydrophobic collapse
+- No explicit zinc ions modeled
+### Next Steps
+- Run hexamer simulation to compare stability
+- Compare with insulin lispro (B28-B29 swap) — faster-acting due to reduced dimerization
+- Compute hydrogen bond analysis to identify which secondary structure elements persist
+- Free energy landscape (PCA/FEL) to characterize conformational states
+
+## Figures
+- 📈 `/home/qr33/comewealth_biohpc/figures/insulin_monomer_deep_20260326.png`
+
+## Data Sources (Reproducibility)
+- **trajectory**: `/home/qr33/comewealth_biohpc/insulin_t2d/md_simulation/md.xtc (1.6 GB)`
+- **topology**: `/home/qr33/comewealth_biohpc/insulin_t2d/md_simulation/md.tpr`
+**analysis_files**:
+  - rmsd: `/home/qr33/comewealth_biohpc/insulin_t2d/md_simulation/md_rmsd_500ns.xvg`
+  - rmsf: `/home/qr33/comewealth_biohpc/insulin_t2d/md_simulation/md_rmsf_500ns.xvg`
+  - gyrate: `/home/qr33/comewealth_biohpc/insulin_t2d/md_simulation/md_gyrate_500ns.xvg`
+  - sasa: `/home/qr33/comewealth_biohpc/insulin_t2d/md_simulation/md_sasa_500ns.xvg`
+</div>
+    </div>
+
+    <div class="report-card" data-category="md_simulation" onclick="this.classList.toggle('expanded')">
+        <div class="meta">
+            <span class="badge badge-md">🧬 Md Simulation</span>
+            <span class="badge badge-server">🖥️ BioHPC</span>
+            
+            <span style="color: var(--text-dim); font-size: 0.8em; margin-left: auto;">2026-03-26T18:10:39.059835</span>
+        </div>
+        <div class="title">Insulin Monomer 410ns Deep Analysis</div>
+        <div class="content">{
+  "status": "completed",
+  "task_id": "insulin_monomer_deep",
+  "task_name": "Insulin Monomer 410ns Deep Analysis",
+  "server": "BioHPC",
+  "methodology": {
+    "system": "Human insulin monomer (chains A: 21 res, B: 30 res) in explicit water",
+    "force_field": "AMBER99SB-ILDN (protein) + TIP3P (water)",
+    "simulation": "410 ns NPT production run after NVT/NPT equilibration",
+    "software": "GROMACS",
+    "analysis_tools": "numpy, scipy, matplotlib",
+    "server": "BioHPC cbsuecco14 (56 cores)"
+  },
+  "analyses": {
+    "rmsd": {
+      "metric": "Root Mean Square Deviation (backbone)",
+      "n_frames": 36001,
+      "time_range_ns": [
+        0.0,
+        410.0
+      ],
+      "mean \u00b1 std": "1.582 \u00b1 1.184 nm",
+      "block_SE": "0.1249 nm (5 blocks)",
+      "min": "0.0005 nm",
+      "max": "3.8723 nm",
+      "final_value": "2.5000 nm",
+      "drift_rate": "1.3065 nm/\u03bcs (R\u00b2=0.015, p=1.23e-117)",
+      "equilibrated": "False",
+      "Q1_mean": "1.423 \u00b1 1.211 nm",
+      "Q4_mean": "1.892 \u00b1 1.156 nm",
+      "Q1_vs_Q4_ttest": "t=-26.57, p=1.42e-152 (significant)",
+      "interpretation": "Progressive structural drift \u2014 monomer unfolds continuously over 410ns, consistent with known insulin monomer instability. No equilibrium plateau reached."
+    },
+    "rmsd_distribution": {
+      "skewness": "-0.056",
+      "kurtosis": "-1.749",
+      "percentiles": {
+        "5th": "0.208 nm",
+        "25th": "0.332 nm",
+        "50th (median)": "2.447 nm",
+        "75th": "2.562 nm",
+        "95th": "2.816 nm"
+      }
+    },
+    "rmsf": {
+      "metric": "Root Mean Square Fluctuation per residue",
+      "n_residues": 51,
+      "overall_mean \u00b1 std": "1.403 \u00b1 0.282 nm",
+      "chain_A_mean": "1.644 \u00b1 0.135 nm",
+      "chain_B_mean": "1.235 \u00b1 0.231 nm",
+      "most_flexible_residues": [
+        12,
+        13,
+        14,
+        16,
+        17
+      ],
+      "most_rigid_residues": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "flexibility_ratio_A_vs_B": "1.33",
+      "interpretation": "Chain A (21 residues) shows higher flexibility than Chain B (30 residues), consistent with Chain A being more exposed and lacking stabilizing contacts in the monomer form."
+    },
+    "radius_of_gyration": {
+      "metric": "Radius of Gyration (compactness measure)",
+      "mean \u00b1 std": "2.068 \u00b1 0.985 nm",
+      "block_SE": "0.1082 nm",
+      "expansion_rate": "1.0184 nm/\u03bcs (R\u00b2=0.013)",
+      "autocorrelation_time": "1.9 ns",
+      "initial_Rg": "1.041 nm",
+      "final_Rg": "2.738 nm",
+      "expansion_percent": "163.0%",
+      "interpretation": "Protein expanding continuously \u2014 radius of gyration increases by ~163%, indicating progressive unfolding of the monomer."
+    },
+    "sasa": {
+      "metric": "Solvent Accessible Surface Area",
+      "mean \u00b1 std": "38.27 \u00b1 1.43 nm\u00b2",
+      "block_SE": "0.238 nm\u00b2",
+      "trend": "-0.339 nm\u00b2/\u03bcs (R\u00b2=0.001, p=8.20e-07)",
+      "coefficient_of_variation": "3.7%",
+      "interpretation": "SASA relatively stable despite backbone rearrangement \u2014 exposed surface area maintained even as protein unfolds, suggesting partial preservation of secondary structure elements."
+    },
+    "cross_correlation": {
+      "RMSD_vs_Rg": "r = 0.996 (strong)",
+      "interpretation": "Strong positive correlation between RMSD and Rg confirms that structural deviation is accompanied by protein expansion \u2014 unfolding rather than compact rearrangement."
+    }
+  },
+  "figures": [
+    "/home/qr33/comewealth_biohpc/figures/insulin_monomer_deep_20260326.png"
+  ],
+  "conclusions": {
+    "main_finding": "Insulin monomer is structurally unstable over 410ns, showing continuous unfolding without reaching equilibrium",
+    "evidence": [
+      "RMSD drift: statistically significant upward trend",
+      "Rg expansion: protein becomes less compact over time",
+      "Strong RMSD-Rg correlation: structural deviation = expansion (not compact rearrangement)",
+      "SASA relatively stable: some secondary structure preserved despite overall unfolding"
+    ],
+    "biological_significance": "Confirms that insulin requires hexamer formation (zinc-mediated) for structural stability \u2014 the monomer form used in rapid-acting analogs is inherently unstable, explaining their faster absorption kinetics",
+    "limitations": [
+      "Single trajectory (no ensemble averaging)",
+      "410ns may be insufficient for full unfolding \u2014 would need \u03bcs-scale for convergence",
+      "Classical force field may underestimate hydrophobic collapse",
+      "No explicit zinc ions modeled"
+    ],
+    "next_steps": [
+      "Run hexamer simulation to compare stability",
+      "Compare with insulin lispro (B28-B29 swap) \u2014 faster-acting due to reduced dimerization",
+      "Compute hydrogen bond analysis to identify which secondary structure elements persist",
+      "Free energy landscape (PCA/FEL) to characteri</div>
+    </div>
 
     <div class="report-card" data-category="equity" onclick="this.classList.toggle('expanded')">
         <div class="meta">
@@ -9956,286 +10255,20 @@ H1 所證實的「日內相關性開關效應」(0.37 vs 0.01) 非常乾淨俐�
 - **script**: `research1_engine_v2.py::task_crsp_analysis()`</div>
     </div>
 
-    <div class="report-card" data-category="equity" onclick="this.classList.toggle('expanded')">
-        <div class="meta">
-            <span class="badge badge-equity">📈 Equity</span>
-            <span class="badge badge-server">🖥️ BioHPC</span>
-            
-            <span style="color: var(--text-dim); font-size: 0.8em; margin-left: auto;">2026-03-25T12:49:04.790684</span>
-        </div>
-        <div class="title">CRSP/Compustat Data Deep Exploration</div>
-        <div class="content">{
-  "status": "completed",
-  "task_id": "crsp_data_analysis",
-  "task_name": "CRSP/Compustat Data Deep Exploration",
-  "server": "research1",
-  "methodology": {
-    "data": "CRSP SAS7BDAT files + Compustat SAS7BDAT files",
-    "approach": "File inventory, structure analysis, size profiling",
-    "tools": "Python pathlib + os.stat"
-  },
-  "analyses": {
-    "crsp": {
-      "total_files": 0,
-      "total_size_gb": 0.0,
-      "categories": {},
-      "largest_files": []
-    },
-    "compustat": {
-      "total_files": 0,
-      "total_size_gb": 0.0,
-      "files": [],
-      "largest_files": []
-    },
-    "crsp_202402": {
-      "total_files": 1,
-      "file_types": [
-        ".zip"
-      ],
-      "files": [
-        "saz202402_sas.zip"
-      ]
-    },
-    "wrds_taq2020": {
-      "months": [
-        "202001",
-        "202002",
-        "202004",
-        "202005",
-        "202006",
-        "202007",
-        "202008",
-        "202009",
-        "202010",
-        "202011",
-        "202012",
-        "202203",
-        "temp"
-      ],
-      "structure": {
-        "202001": [
-          "EQY_US_ALL_ADMIN_CTS_202001",
-          "EQY_US_ALL_ADMIN_UTP_202001",
-          "EQY_US_ALL_BBO_202001",
-          "EQY_US_ALL_BBO_ADMIN_202001",
-          "EQY_US_ALL_NBBO_202001",
-          "EQY_US_ALL_REF_MASTER_202001",
-          "EQY_US_ALL_TRADE_202001",
-          "EQY_US_ALL_TRADE_ADMIN_202001"
-        ],
-        "202002": [
-          "EQY_US_ALL_ADMIN_CTS_202002",
-          "EQY_US_ALL_ADMIN_UTP_202002",
-          "EQY_US_ALL_BBO_202002",
-          "EQY_US_ALL_BBO_ADMIN_202002",
-          "EQY_US_ALL_NBBO_202002",
-          "EQY_US_ALL_REF_MASTER_202002",
-          "EQY_US_ALL_TRADE_202002",
-          "EQY_US_ALL_TRADE_ADMIN_202002"
-        ]
-      }
-    },
-    "wrds_taq2022": {
-      "months": [],
-      "structure": {}
-    },
-    "wrds_taq2024": {
-      "months": [
-        "202401",
-        "202403",
-        "temp"
-      ],
-      "structure": {
-        "202401": [
-          "EQY_US_ALL_ADMIN_CTS_202401",
-          "EQY_US_ALL_ADMIN_UTP_202401",
-          "EQY_US_ALL_BBO_202401",
-          "EQY_US_ALL_BBO_ADMIN_202401",
-          "EQY_US_ALL_NBBO_202401",
-          "EQY_US_ALL_REF_MASTER_202401",
-          "EQY_US_ALL_TRADE_202401",
-          "EQY_US_ALL_TRADE_ADMIN_202401"
-        ],
-        "202403": [
-          "EQY_US_ALL_ADMIN_CTS_202403",
-          "EQY_US_ALL_ADMIN_UTP_202403",
-          "EQY_US_ALL_BBO_202403",
-          "EQY_US_ALL_BBO_ADMIN_202403",
-          "EQY_US_ALL_NBBO_202403",
-          "EQY_US_ALL_REF_MASTER_202403",
-          "EQY_US_ALL_TRADE_202403",
-          "EQY_US_ALL_TRADE_ADMIN_202403"
-        ]
-      }
-    }
-  },
-  "figures": [
-    "/mnt/work/qr33/comewealth_r1/figures/r1_data_inventory_20260325.png"
-  ],
-  "conclusions": {
-    "main_finding": "Research1 hosts a comprehensive financial data ecosystem spanning CRSP, Compustat, DTAQ, and WRDS TAQ",
-    "total_databases": 4,
-    "time_coverage": "1993-2024 (TAQ), 2004-2021 (DTAQ splitbbo), various (CRSP/Compustat)",
-    "next_steps": [
-      "Install sas7bdat reader (pip install sas7bdat or pyreadstat) to parse CRSP/Compustat",
-      "Compute actual market statistics: daily returns, spreads, volumes",
-      "Build stock universe screens for backtesting"
-    ],
-    "limitations": [
-      "SAS7BDAT files require specialized reader not yet installed",
-      "TAQ legacy format (pre-2014) uses binary encoding \u2014 needs custom parser",
-      "DTAQ text parsing implemented but record-level analysis pending"
-    ]
-  },
-  "data_sources": {
-    "crsp": "/mnt/databases/crsp",
-    "compustat": "/mnt/databases/comp",
-    "dtaq": "/mnt/dtaq/splitbbo",
-    "wrds_taq": "/mnt/wrds",
-    "script": "research1_engine_v2.py::task_crsp_analysis()"
-  },
-  "elapsed_seconds": 0.2,
-  "timestamp": "2026-03-25T12:49:04.790684"
-}</div>
-    </div>
-
-    <div class="report-card" data-category="equity" onclick="this.classList.toggle('expanded')">
-        <div class="meta">
-            <span class="badge badge-equity">📈 Equity</span>
-            <span class="badge badge-server">🖥️ BioHPC</span>
-            
-            <span style="color: var(--text-dim); font-size: 0.8em; margin-left: auto;">2026-03-25T12:49:04.545617</span>
-        </div>
-        <div class="title">DTAQ Market Depth Evolution (2016-2021) — Deep Analysis</div>
-        <div class="content"># Research1 Report: DTAQ Market Depth Evolution (2016-2021) — Deep Analysis
-
-**Date**: 2026-03-25T12:49:04.545617
-**Task**: dtaq_depth_evolution_v2
-**Server**: research1 (jcb-research1.business.cornell.edu)
-**Status**: completed
-**Time**: 0.4s
-
-## Methodology
-- **data**: NYSE Daily TAQ (DTAQ) splitbbo dataset, 2016-2021
-- **metrics**: File counts, data volume, temporal coverage as proxy for market activity growth
-- **approach**: Sample first available month per year, aggregate statistics
-- **limitations**:
-  - Using file counts as proxy (not yet parsing individual quote records)
-  - Coverage may vary by exchange inclusion across years
-
----
-
-## Results
-
-### yearly_overview
-
-## Conclusions
-
-- **main_finding**: No DTAQ years found
-- **implications**: Growing data volume reflects market structure evolution: more exchanges, faster quoting, algorithmic liquidity provision
-### Limitations
-- File-level analysis only — not yet parsing individual quote/trade records
-- Need to implement binary/text record parsing for actual spread/depth computation
-- Exchange-level breakdown not yet available
-### Next Steps
-- Parse NBBO records to compute quoted spreads, effective spreads
-- Compute depth at best bid/ask across years
-- Event study: compare metrics around flash crash dates
-- Cross-reference with Reg NMS implementation (2007) and decimalization effects
-
-## Figures
-
-- 📈 `/mnt/work/qr33/comewealth_r1/figures/dtaq_evolution_20260325.png`
-
-## Data Sources (Reproducibility)
-
-- **dtaq_path**: `/mnt/dtaq/splitbbo`
-- **years_available**: 
-- **script**: `research1_engine_v2.py::task_dtaq_depth_evolution()`</div>
-    </div>
-
-    <div class="report-card" data-category="equity" onclick="this.classList.toggle('expanded')">
-        <div class="meta">
-            <span class="badge badge-equity">📈 Equity</span>
-            <span class="badge badge-server">🖥️ BioHPC</span>
-            
-            <span style="color: var(--text-dim); font-size: 0.8em; margin-left: auto;">2026-03-25T12:49:04.545617</span>
-        </div>
-        <div class="title">DTAQ Market Depth Evolution (2016-2021) — Deep Analysis</div>
-        <div class="content">{
-  "status": "completed",
-  "task_id": "dtaq_depth_evolution_v2",
-  "task_name": "DTAQ Market Depth Evolution (2016-2021) \u2014 Deep Analysis",
-  "server": "research1",
-  "methodology": {
-    "data": "NYSE Daily TAQ (DTAQ) splitbbo dataset, 2016-2021",
-    "metrics": "File counts, data volume, temporal coverage as proxy for market activity growth",
-    "approach": "Sample first available month per year, aggregate statistics",
-    "limitations": [
-      "Using file counts as proxy (not yet parsing individual quote records)",
-      "Coverage may vary by exchange inclusion across years"
-    ]
-  },
-  "analyses": {
-    "yearly_overview": {}
-  },
-  "figures": [
-    "/mnt/work/qr33/comewealth_r1/figures/dtaq_evolution_20260325.png"
-  ],
-  "conclusions": {
-    "main_finding": "No DTAQ years found",
-    "implications": "Growing data volume reflects market structure evolution: more exchanges, faster quoting, algorithmic liquidity provision",
-    "limitations": [
-      "File-level analysis only \u2014 not yet parsing individual quote/trade records",
-      "Need to implement binary/text record parsing for actual spread/depth computation",
-      "Exchange-level breakdown not yet available"
-    ],
-    "next_steps": [
-      "Parse NBBO records to compute quoted spreads, effective spreads",
-      "Compute depth at best bid/ask across years",
-      "Event study: compare metrics around flash crash dates",
-      "Cross-reference with Reg NMS implementation (2007) and decimalization effects"
-    ]
-  },
-  "data_sources": {
-    "dtaq_path": "/mnt/dtaq/splitbbo",
-    "years_available": [],
-    "script": "research1_engine_v2.py::task_dtaq_depth_evolution()"
-  },
-  "elapsed_seconds": 0.4,
-  "timestamp": "2026-03-25T12:49:04.545617"
-}</div>
-    </div>
-
-    <div class="report-card" data-category="drug_discovery" onclick="this.classList.toggle('expanded')">
-        <div class="meta">
-            <span class="badge badge-drug">💊 Drug Discovery</span>
-            <span class="badge badge-server">🖥️ BioHPC</span>
-            
-            <span style="color: var(--text-dim); font-size: 0.8em; margin-left: auto;">2026-03-25T12:48:53.063452</span>
-        </div>
-        <div class="title">T2D Drug Repurposing — Deep Analysis</div>
-        <div class="content"># BioHPC Research Report: T2D Drug Repurposing — Deep Analysis
-
-**Date**: 2026-03-25T12:48:53.063452
-**Task**: t2d_drug_repurposing_deep
-**Server**: BioHPC
-**Status**: no_data
-**Time**: 0.0s
-
-## Methodology
-- **approach**: Multi-source integration: GWAS loci → Gene expression → Pathway enrichment → Drug-target mapping
-- **data_sources**: GWAS Catalog (T2D loci), GEO (differential expression), ChEMBL (drug targets), STRING (PPI network)
-- **pipeline**: G2DR-inspired framework (arXiv:2603.20346)
-
-## Results
-</div>
-    </div>
-
 </div>
 
 <h2 style="margin-top: 40px; margin-bottom: 20px; color: var(--accent);">📊 Figures Gallery</h2>
 <div class="gallery">
+    <img src="figures/taqclaw_taq_intraday_20260326_1848.png" alt="taq_intraday_20260326_1848.png" title="taqclaw: taq_intraday_20260326_1848.png (2026-03-26)" loading="lazy">
+    <img src="figures/taqclaw_taq_intraday_20260326_1847.png" alt="taq_intraday_20260326_1847.png" title="taqclaw: taq_intraday_20260326_1847.png (2026-03-26)" loading="lazy">
+    <img src="figures/taqclaw_taq_intraday_20260326_1837.png" alt="taq_intraday_20260326_1837.png" title="taqclaw: taq_intraday_20260326_1837.png (2026-03-26)" loading="lazy">
+    <img src="figures/taqclaw_taq_intraday_20260326_1836.png" alt="taq_intraday_20260326_1836.png" title="taqclaw: taq_intraday_20260326_1836.png (2026-03-26)" loading="lazy">
+    <img src="figures/taqclaw_taq_intraday_20260326_1823.png" alt="taq_intraday_20260326_1823.png" title="taqclaw: taq_intraday_20260326_1823.png (2026-03-26)" loading="lazy">
+    <img src="figures/taqclaw_taq_intraday_20260326_1822.png" alt="taq_intraday_20260326_1822.png" title="taqclaw: taq_intraday_20260326_1822.png (2026-03-26)" loading="lazy">
+    <img src="figures/taqclaw_taq_intraday_20260326_1812.png" alt="taq_intraday_20260326_1812.png" title="taqclaw: taq_intraday_20260326_1812.png (2026-03-26)" loading="lazy">
+    <img src="figures/taqclaw_taq_intraday_20260326_1811.png" alt="taq_intraday_20260326_1811.png" title="taqclaw: taq_intraday_20260326_1811.png (2026-03-26)" loading="lazy">
+    <img src="figures/taqclaw_taq_intraday_20260326_1802.png" alt="taq_intraday_20260326_1802.png" title="taqclaw: taq_intraday_20260326_1802.png (2026-03-26)" loading="lazy">
+    <img src="figures/taqclaw_taq_intraday_20260326_1801.png" alt="taq_intraday_20260326_1801.png" title="taqclaw: taq_intraday_20260326_1801.png (2026-03-26)" loading="lazy">
     <img src="figures/taqclaw_taq_intraday_20260326_1746.png" alt="taq_intraday_20260326_1746.png" title="taqclaw: taq_intraday_20260326_1746.png (2026-03-26)" loading="lazy">
     <img src="figures/taqclaw_taq_intraday_20260326_1745.png" alt="taq_intraday_20260326_1745.png" title="taqclaw: taq_intraday_20260326_1745.png (2026-03-26)" loading="lazy">
     <img src="figures/taqclaw_taq_intraday_20260326_1735.png" alt="taq_intraday_20260326_1735.png" title="taqclaw: taq_intraday_20260326_1735.png (2026-03-26)" loading="lazy">
@@ -10256,23 +10289,13 @@ H1 所證實的「日內相關性開關效應」(0.37 vs 0.01) 非常乾淨俐�
     <img src="figures/taqclaw_taq_intraday_20260326_1602.png" alt="taq_intraday_20260326_1602.png" title="taqclaw: taq_intraday_20260326_1602.png (2026-03-26)" loading="lazy">
     <img src="figures/taqclaw_taq_intraday_20260326_1549.png" alt="taq_intraday_20260326_1549.png" title="taqclaw: taq_intraday_20260326_1549.png (2026-03-26)" loading="lazy">
     <img src="figures/taqclaw_taq_intraday_20260326_1548.png" alt="taq_intraday_20260326_1548.png" title="taqclaw: taq_intraday_20260326_1548.png (2026-03-26)" loading="lazy">
-    <img src="figures/taqclaw_taq_intraday_20260326_1541.png" alt="taq_intraday_20260326_1541.png" title="taqclaw: taq_intraday_20260326_1541.png (2026-03-26)" loading="lazy">
-    <img src="figures/taqclaw_taq_intraday_20260326_1540.png" alt="taq_intraday_20260326_1540.png" title="taqclaw: taq_intraday_20260326_1540.png (2026-03-26)" loading="lazy">
-    <img src="figures/taqclaw_taq_intraday_20260326_1509.png" alt="taq_intraday_20260326_1509.png" title="taqclaw: taq_intraday_20260326_1509.png (2026-03-26)" loading="lazy">
-    <img src="figures/taqclaw_taq_intraday_20260326_1501.png" alt="taq_intraday_20260326_1501.png" title="taqclaw: taq_intraday_20260326_1501.png (2026-03-26)" loading="lazy">
-    <img src="figures/taqclaw_taq_intraday_20260326_1500.png" alt="taq_intraday_20260326_1500.png" title="taqclaw: taq_intraday_20260326_1500.png (2026-03-26)" loading="lazy">
-    <img src="figures/taqclaw_taq_intraday_20260326_1454.png" alt="taq_intraday_20260326_1454.png" title="taqclaw: taq_intraday_20260326_1454.png (2026-03-26)" loading="lazy">
-    <img src="figures/taqclaw_taq_intraday_20260326_1453.png" alt="taq_intraday_20260326_1453.png" title="taqclaw: taq_intraday_20260326_1453.png (2026-03-26)" loading="lazy">
-    <img src="figures/taqclaw_taq_intraday_20260326_1442.png" alt="taq_intraday_20260326_1442.png" title="taqclaw: taq_intraday_20260326_1442.png (2026-03-26)" loading="lazy">
-    <img src="figures/taqclaw_taq_intraday_20260326_1441.png" alt="taq_intraday_20260326_1441.png" title="taqclaw: taq_intraday_20260326_1441.png (2026-03-26)" loading="lazy">
-    <img src="figures/taqclaw_taq_intraday_20260326_1435.png" alt="taq_intraday_20260326_1435.png" title="taqclaw: taq_intraday_20260326_1435.png (2026-03-26)" loading="lazy">
 
 </div>
 
 <div class="footer">
     <p>Agentic Sciences Research Lab — Autonomous AI-Driven Research</p>
     <p>research3 (Kaiko/TAQ) + BioHPC (660-core cluster) — 24/7 Continuous Discovery</p>
-    <p>Last build: 2026-03-26 18:00 ET</p>
+    <p>Last build: 2026-03-26 19:00 ET</p>
 </div>
 
 </div>

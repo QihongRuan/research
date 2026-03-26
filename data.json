@@ -1,10 +1,46 @@
 {
-  "updated": "2026-03-26T18:00:13.439587",
-  "reports_count": 357,
+  "updated": "2026-03-26T19:00:14.867052",
+  "reports_count": 361,
   "finance_count": 263,
-  "bio_count": 54,
-  "figures_count": 113,
+  "bio_count": 58,
+  "figures_count": 114,
   "reports": [
+    {
+      "source": "biohpc",
+      "category": "drug_discovery",
+      "title": "T2D Drug Repurposing \u2014 Deep Analysis",
+      "date": "2026-03-26T18:10:39.258489",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_t2d_drug_repurposing_deep_20260326_1810.md",
+      "filename": "report_t2d_drug_repurposing_deep_20260326_1810.md"
+    },
+    {
+      "source": "biohpc",
+      "category": "drug_discovery",
+      "title": "T2D Drug Repurposing \u2014 Deep Analysis",
+      "date": "2026-03-26T18:10:39.258489",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_t2d_drug_repurposing_deep_20260326_1810.json",
+      "filename": "report_t2d_drug_repurposing_deep_20260326_1810.json"
+    },
+    {
+      "source": "biohpc",
+      "category": "md_simulation",
+      "title": "Insulin Monomer 410ns Deep Analysis",
+      "date": "2026-03-26T18:10:39.059835",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_deep_20260326_1810.md",
+      "filename": "report_insulin_monomer_deep_20260326_1810.md"
+    },
+    {
+      "source": "biohpc",
+      "category": "md_simulation",
+      "title": "Insulin Monomer 410ns Deep Analysis",
+      "date": "2026-03-26T18:10:39.059835",
+      "score": 0,
+      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_deep_20260326_1810.json",
+      "filename": "report_insulin_monomer_deep_20260326_1810.json"
+    },
     {
       "source": "research1",
       "category": "equity",
@@ -953,42 +989,6 @@
       "score": 0,
       "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_data_analysis_20260325_1249.md",
       "filename": "report_crsp_data_analysis_20260325_1249.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "CRSP/Compustat Data Deep Exploration",
-      "date": "2026-03-25T12:49:04.790684",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_data_analysis_20260325_1249.json",
-      "filename": "report_crsp_data_analysis_20260325_1249.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "DTAQ Market Depth Evolution (2016-2021) \u2014 Deep Analysis",
-      "date": "2026-03-25T12:49:04.545617",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_dtaq_depth_evolution_v2_20260325_1249.md",
-      "filename": "report_dtaq_depth_evolution_v2_20260325_1249.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "DTAQ Market Depth Evolution (2016-2021) \u2014 Deep Analysis",
-      "date": "2026-03-25T12:49:04.545617",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_dtaq_depth_evolution_v2_20260325_1249.json",
-      "filename": "report_dtaq_depth_evolution_v2_20260325_1249.json"
-    },
-    {
-      "source": "biohpc",
-      "category": "drug_discovery",
-      "title": "T2D Drug Repurposing \u2014 Deep Analysis",
-      "date": "2026-03-25T12:48:53.063452",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_t2d_drug_repurposing_deep_20260325_1248.md",
-      "filename": "report_t2d_drug_repurposing_deep_20260325_1248.md"
     }
   ]
 }
