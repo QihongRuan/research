@@ -1,7 +1,7 @@
 {
-  "updated": "2026-03-26T20:00:15.376168",
-  "reports_count": 361,
-  "finance_count": 263,
+  "updated": "2026-03-26T21:00:15.013969",
+  "reports_count": 362,
+  "finance_count": 264,
   "bio_count": 58,
   "figures_count": 114,
   "reports": [
@@ -94,6 +94,16 @@
       "score": 0,
       "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_dtaq_depth_evolution_v2_20260326_1249.json",
       "filename": "report_dtaq_depth_evolution_v2_20260326_1249.json"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "US Equity Intraday Volatility U-Shape (TAQ)",
+      "date": "2026-03-26 20:21",
+      "score": 5,
+      "thinking_tokens": 1693,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260326_2015.md",
+      "filename": "report_US_Equity_Intraday_Volatility__20260326_2015.md"
     },
     {
       "source": "taqclaw",
@@ -980,15 +990,6 @@
       "score": 0,
       "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_deep_20260325_1810.json",
       "filename": "report_insulin_monomer_deep_20260325_1810.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "CRSP/Compustat Data Deep Exploration",
-      "date": "2026-03-25T12:49:04.790684",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_data_analysis_20260325_1249.md",
-      "filename": "report_crsp_data_analysis_20260325_1249.md"
     }
   ]
 }
