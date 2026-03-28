@@ -1,7 +1,7 @@
 {
-  "updated": "2026-03-28T16:00:16.152352",
-  "reports_count": 538,
-  "finance_count": 426,
+  "updated": "2026-03-28T17:00:16.025155",
+  "reports_count": 540,
+  "finance_count": 428,
   "bio_count": 62,
   "figures_count": 119,
   "reports": [
@@ -58,6 +58,26 @@
       "score": 0,
       "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_dtaq_depth_evolution_v2_20260328_1249.json",
       "filename": "report_dtaq_depth_evolution_v2_20260328_1249.json"
+    },
+    {
+      "source": "taqclaw",
+      "category": "cross_market",
+      "title": "Cross-Exchange BTC Price Dispersion",
+      "date": "2026-03-28 16:26",
+      "score": 0,
+      "thinking_tokens": 1883,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260328_1617.md",
+      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260328_1617.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Binance BTC-USDT Order Book Asymmetry",
+      "date": "2026-03-28 16:11",
+      "score": 5,
+      "thinking_tokens": 2031,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Binance_BTC-USDT_Order_Book_As_20260328_1609.md",
+      "filename": "report_Binance_BTC-USDT_Order_Book_As_20260328_1609.md"
     },
     {
       "source": "taqclaw",
@@ -970,26 +990,6 @@
       "thinking_tokens": 2087,
       "filepath": "/mnt/work/qr33/taqclaw/results/report_Kaiko_Multi-Exchange_Liquidity_20260327_1442.md",
       "filename": "report_Kaiko_Multi-Exchange_Liquidity_20260327_1442.md"
-    },
-    {
-      "source": "taqclaw",
-      "category": "equity",
-      "title": "Crypto-Equity Correlation Regime Changes",
-      "date": "2026-03-27 14:37",
-      "score": 5,
-      "thinking_tokens": 1765,
-      "filepath": "/mnt/work/qr33/taqclaw/results/report_Crypto-Equity_Correlation_Regi_20260327_1435.md",
-      "filename": "report_Crypto-Equity_Correlation_Regi_20260327_1435.md"
-    },
-    {
-      "source": "taqclaw",
-      "category": "equity",
-      "title": "US Equity Intraday Volatility U-Shape (TAQ)",
-      "date": "2026-03-27 14:30",
-      "score": 5,
-      "thinking_tokens": 1897,
-      "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260327_1427.md",
-      "filename": "report_US_Equity_Intraday_Volatility__20260327_1427.md"
     }
   ]
 }
