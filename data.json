@@ -1,10 +1,70 @@
 {
-  "updated": "2026-03-28T04:00:12.010740",
-  "reports_count": 457,
-  "finance_count": 351,
+  "updated": "2026-03-28T05:00:15.116608",
+  "reports_count": 463,
+  "finance_count": 357,
   "bio_count": 62,
   "figures_count": 117,
   "reports": [
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Binance BTC-USDT Order Book Asymmetry",
+      "date": "2026-03-28 04:52",
+      "score": 5,
+      "thinking_tokens": 1825,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Binance_BTC-USDT_Order_Book_As_20260328_0450.md",
+      "filename": "report_Binance_BTC-USDT_Order_Book_As_20260328_0450.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Kaiko Multi-Exchange Liquidity Comparison",
+      "date": "2026-03-28 04:40",
+      "score": 5,
+      "thinking_tokens": 1992,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Kaiko_Multi-Exchange_Liquidity_20260328_0436.md",
+      "filename": "report_Kaiko_Multi-Exchange_Liquidity_20260328_0436.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "Crypto-Equity Correlation Regime Changes",
+      "date": "2026-03-28 04:31",
+      "score": 1,
+      "thinking_tokens": 1553,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Crypto-Equity_Correlation_Regi_20260328_0428.md",
+      "filename": "report_Crypto-Equity_Correlation_Regi_20260328_0428.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "US Equity Intraday Volatility U-Shape (TAQ)",
+      "date": "2026-03-28 04:23",
+      "score": 5,
+      "thinking_tokens": 1589,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260328_0421.md",
+      "filename": "report_US_Equity_Intraday_Volatility__20260328_0421.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "cross_market",
+      "title": "Cross-Exchange BTC Price Dispersion",
+      "date": "2026-03-28 04:15",
+      "score": 5,
+      "thinking_tokens": 1887,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260328_0413.md",
+      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260328_0413.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Binance BTC-USDT Order Book Asymmetry",
+      "date": "2026-03-28 04:08",
+      "score": 2,
+      "thinking_tokens": 2097,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Binance_BTC-USDT_Order_Book_As_20260328_0406.md",
+      "filename": "report_Binance_BTC-USDT_Order_Book_As_20260328_0406.md"
+    },
     {
       "source": "taqclaw",
       "category": "crypto",
@@ -936,61 +996,6 @@
       "thinking_tokens": 1971,
       "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260327_0308.md",
       "filename": "report_US_Equity_Intraday_Volatility__20260327_0308.md"
-    },
-    {
-      "source": "taqclaw",
-      "category": "cross_market",
-      "title": "Cross-Exchange BTC Price Dispersion",
-      "date": "2026-03-27 03:03",
-      "score": 0,
-      "thinking_tokens": 1577,
-      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260327_0257.md",
-      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260327_0257.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "drug_discovery",
-      "title": "T2D Drug Repurposing \u2014 Deep Analysis",
-      "date": "2026-03-26T18:10:39.258489",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_t2d_drug_repurposing_deep_20260326_1810.md",
-      "filename": "report_t2d_drug_repurposing_deep_20260326_1810.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "drug_discovery",
-      "title": "T2D Drug Repurposing \u2014 Deep Analysis",
-      "date": "2026-03-26T18:10:39.258489",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_t2d_drug_repurposing_deep_20260326_1810.json",
-      "filename": "report_t2d_drug_repurposing_deep_20260326_1810.json"
-    },
-    {
-      "source": "biohpc",
-      "category": "md_simulation",
-      "title": "Insulin Monomer 410ns Deep Analysis",
-      "date": "2026-03-26T18:10:39.059835",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_deep_20260326_1810.md",
-      "filename": "report_insulin_monomer_deep_20260326_1810.md"
-    },
-    {
-      "source": "biohpc",
-      "category": "md_simulation",
-      "title": "Insulin Monomer 410ns Deep Analysis",
-      "date": "2026-03-26T18:10:39.059835",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/biohpc_sync/reports/report_insulin_monomer_deep_20260326_1810.json",
-      "filename": "report_insulin_monomer_deep_20260326_1810.json"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "Reanalysis of Existing Research Results",
-      "date": "2026-03-26T12:49:11.410975",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_reanalyze_existing_20260326_1249.md",
-      "filename": "report_reanalyze_existing_20260326_1249.md"
     }
   ]
 }
