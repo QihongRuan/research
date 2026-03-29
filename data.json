@@ -1,10 +1,80 @@
 {
-  "updated": "2026-03-29T05:00:14.869265",
-  "reports_count": 556,
-  "finance_count": 440,
+  "updated": "2026-03-29T06:00:16.789713",
+  "reports_count": 563,
+  "finance_count": 447,
   "bio_count": 66,
   "figures_count": 120,
   "reports": [
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "US Equity Intraday Volatility U-Shape (TAQ)",
+      "date": "2026-03-29 05:54",
+      "score": 8,
+      "thinking_tokens": 1595,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260329_0551.md",
+      "filename": "report_US_Equity_Intraday_Volatility__20260329_0551.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "cross_market",
+      "title": "Cross-Exchange BTC Price Dispersion",
+      "date": "2026-03-29 05:46",
+      "score": 1,
+      "thinking_tokens": 1652,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260329_0543.md",
+      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260329_0543.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Binance BTC-USDT Order Book Asymmetry",
+      "date": "2026-03-29 05:38",
+      "score": 2,
+      "thinking_tokens": 1697,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Binance_BTC-USDT_Order_Book_As_20260329_0535.md",
+      "filename": "report_Binance_BTC-USDT_Order_Book_As_20260329_0535.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "crypto",
+      "title": "Kaiko Multi-Exchange Liquidity Comparison",
+      "date": "2026-03-29 05:25",
+      "score": 5,
+      "thinking_tokens": 1686,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Kaiko_Multi-Exchange_Liquidity_20260329_0522.md",
+      "filename": "report_Kaiko_Multi-Exchange_Liquidity_20260329_0522.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "Crypto-Equity Correlation Regime Changes",
+      "date": "2026-03-29 05:17",
+      "score": 0,
+      "thinking_tokens": 1292,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Crypto-Equity_Correlation_Regi_20260329_0514.md",
+      "filename": "report_Crypto-Equity_Correlation_Regi_20260329_0514.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "equity",
+      "title": "US Equity Intraday Volatility U-Shape (TAQ)",
+      "date": "2026-03-29 05:09",
+      "score": 1,
+      "thinking_tokens": 1590,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260329_0506.md",
+      "filename": "report_US_Equity_Intraday_Volatility__20260329_0506.md"
+    },
+    {
+      "source": "taqclaw",
+      "category": "cross_market",
+      "title": "Cross-Exchange BTC Price Dispersion",
+      "date": "2026-03-29 05:01",
+      "score": 4,
+      "thinking_tokens": 1561,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260329_0458.md",
+      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260329_0458.md"
+    },
     {
       "source": "taqclaw",
       "category": "crypto",
@@ -924,76 +994,6 @@
       "thinking_tokens": 1975,
       "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260328_0457.md",
       "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260328_0457.md"
-    },
-    {
-      "source": "taqclaw",
-      "category": "crypto",
-      "title": "Binance BTC-USDT Order Book Asymmetry",
-      "date": "2026-03-28 04:52",
-      "score": 5,
-      "thinking_tokens": 1825,
-      "filepath": "/mnt/work/qr33/taqclaw/results/report_Binance_BTC-USDT_Order_Book_As_20260328_0450.md",
-      "filename": "report_Binance_BTC-USDT_Order_Book_As_20260328_0450.md"
-    },
-    {
-      "source": "taqclaw",
-      "category": "crypto",
-      "title": "Kaiko Multi-Exchange Liquidity Comparison",
-      "date": "2026-03-28 04:40",
-      "score": 5,
-      "thinking_tokens": 1992,
-      "filepath": "/mnt/work/qr33/taqclaw/results/report_Kaiko_Multi-Exchange_Liquidity_20260328_0436.md",
-      "filename": "report_Kaiko_Multi-Exchange_Liquidity_20260328_0436.md"
-    },
-    {
-      "source": "taqclaw",
-      "category": "equity",
-      "title": "Crypto-Equity Correlation Regime Changes",
-      "date": "2026-03-28 04:31",
-      "score": 1,
-      "thinking_tokens": 1553,
-      "filepath": "/mnt/work/qr33/taqclaw/results/report_Crypto-Equity_Correlation_Regi_20260328_0428.md",
-      "filename": "report_Crypto-Equity_Correlation_Regi_20260328_0428.md"
-    },
-    {
-      "source": "taqclaw",
-      "category": "equity",
-      "title": "US Equity Intraday Volatility U-Shape (TAQ)",
-      "date": "2026-03-28 04:23",
-      "score": 5,
-      "thinking_tokens": 1589,
-      "filepath": "/mnt/work/qr33/taqclaw/results/report_US_Equity_Intraday_Volatility__20260328_0421.md",
-      "filename": "report_US_Equity_Intraday_Volatility__20260328_0421.md"
-    },
-    {
-      "source": "taqclaw",
-      "category": "cross_market",
-      "title": "Cross-Exchange BTC Price Dispersion",
-      "date": "2026-03-28 04:15",
-      "score": 5,
-      "thinking_tokens": 1887,
-      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260328_0413.md",
-      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260328_0413.md"
-    },
-    {
-      "source": "taqclaw",
-      "category": "crypto",
-      "title": "Binance BTC-USDT Order Book Asymmetry",
-      "date": "2026-03-28 04:08",
-      "score": 2,
-      "thinking_tokens": 2097,
-      "filepath": "/mnt/work/qr33/taqclaw/results/report_Binance_BTC-USDT_Order_Book_As_20260328_0406.md",
-      "filename": "report_Binance_BTC-USDT_Order_Book_As_20260328_0406.md"
-    },
-    {
-      "source": "taqclaw",
-      "category": "crypto",
-      "title": "Kaiko Multi-Exchange Liquidity Comparison",
-      "date": "2026-03-28 03:56",
-      "score": 5,
-      "thinking_tokens": 1787,
-      "filepath": "/mnt/work/qr33/taqclaw/results/report_Kaiko_Multi-Exchange_Liquidity_20260328_0352.md",
-      "filename": "report_Kaiko_Multi-Exchange_Liquidity_20260328_0352.md"
     }
   ]
 }
