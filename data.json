@@ -1,7 +1,7 @@
 {
-  "updated": "2026-03-28T20:00:14.901668",
-  "reports_count": 544,
-  "finance_count": 428,
+  "updated": "2026-03-28T21:00:18.986420",
+  "reports_count": 545,
+  "finance_count": 429,
   "bio_count": 66,
   "figures_count": 120,
   "reports": [
@@ -94,6 +94,16 @@
       "score": 0,
       "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_dtaq_depth_evolution_v2_20260328_1249.json",
       "filename": "report_dtaq_depth_evolution_v2_20260328_1249.json"
+    },
+    {
+      "source": "taqclaw",
+      "category": "cross_market",
+      "title": "Cross-Exchange BTC Price Dispersion",
+      "date": "2026-03-28 20:46",
+      "score": 1,
+      "thinking_tokens": 1441,
+      "filepath": "/mnt/work/qr33/taqclaw/results/report_Cross-Exchange_BTC_Price_Dispe_20260328_2036.md",
+      "filename": "report_Cross-Exchange_BTC_Price_Dispe_20260328_2036.md"
     },
     {
       "source": "taqclaw",
@@ -979,15 +989,6 @@
       "score": 0,
       "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_data_analysis_20260327_1249.md",
       "filename": "report_crsp_data_analysis_20260327_1249.md"
-    },
-    {
-      "source": "research1",
-      "category": "equity",
-      "title": "CRSP/Compustat Data Deep Exploration",
-      "date": "2026-03-27T12:49:15.982417",
-      "score": 0,
-      "filepath": "/mnt/work/qr33/comewealth/cache/r1_sync/reports/report_crsp_data_analysis_20260327_1249.json",
-      "filename": "report_crsp_data_analysis_20260327_1249.json"
     }
   ]
 }
